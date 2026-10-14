@@ -1,0 +1,3288 @@
+
+/* =====================================================
+   WEBEXPLORER - FEUILLE DE STYLE COMPLETE
+   Projet de fin d'études
+
+   Design : bleu nuit, violet et cyan
+   Responsive : ordinateur, tablette et smartphone
+   ===================================================== */
+
+
+/* =====================================================
+   1. VARIABLES
+   ===================================================== */
+
+:root {
+    --bg-main: #080d1c;
+    --bg-secondary: #10182b;
+    --bg-card: #151e35;
+    --bg-card-hover: #1b2944;
+
+    --purple: #9468ff;
+    --purple-dark: #6940d8;
+    --cyan: #38d9ff;
+    --blue: #508bff;
+    --green: #42dfa2;
+    --orange: #ffb45c;
+    --red: #ff647e;
+
+    --text-main: #f5f7ff;
+    --text-secondary: #a7b4ce;
+    --text-muted: #7785a1;
+
+    --border: rgba(255, 255, 255, 0.09);
+
+    --gradient-main: linear-gradient(
+        135deg,
+        #9468ff,
+        #508bff 55%,
+        #38d9ff
+    );
+
+    --shadow-card: 0 12px 35px rgba(0, 0, 0, 0.2);
+    --shadow-glow: 0 0 35px rgba(148, 104, 255, 0.2);
+
+    --radius-small: 12px;
+    --radius-medium: 18px;
+    --radius-large: 26px;
+
+    --transition: 0.3s ease;
+
+    --container-width: 1200px;
+}
+
+
+/* =====================================================
+   2. REGLAGES GENERAUX
+   ===================================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 95px;
+}
+
+body {
+    font-family: 'Inter', Arial, sans-serif;
+    background: var(--bg-main);
+    color: var(--text-main);
+    line-height: 1.7;
+    overflow-x: hidden;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    top: -250px;
+    left: -200px;
+    width: 650px;
+    height: 650px;
+    border-radius: 50%;
+    background: rgba(112, 70, 255, 0.08);
+    filter: blur(110px);
+    pointer-events: none;
+    z-index: -1;
+}
+
+body::after {
+    content: "";
+    position: fixed;
+    bottom: -280px;
+    right: -220px;
+    width: 700px;
+    height: 700px;
+    border-radius: 50%;
+    background: rgba(36, 190, 255, 0.06);
+    filter: blur(120px);
+    pointer-events: none;
+    z-index: -1;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;
+}
+
+button,
+input {
+    font: inherit;
+}
+
+button {
+    cursor: pointer;
+}
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible {
+    outline: 3px solid var(--cyan);
+    outline-offset: 4px;
+}
+
+button:disabled {
+    cursor: not-allowed;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+h1,
+h2,
+h3,
+h4 {
+    line-height: 1.25;
+    letter-spacing: -0.03em;
+}
+
+p {
+    color: var(--text-secondary);
+}
+
+::selection {
+    background: var(--purple);
+    color: white;
+}
+
+[hidden] {
+    display: none !important;
+}
+
+
+/* =====================================================
+   3. STRUCTURE DES SECTIONS
+   ===================================================== */
+
+.section {
+    width: 100%;
+    padding: 110px max(
+        24px,
+        calc((100% - var(--container-width)) / 2)
+    );
+    position: relative;
+}
+
+.section:nth-of-type(even) {
+    background: rgba(255, 255, 255, 0.012);
+}
+
+.section-heading {
+    text-align: center;
+    max-width: 760px;
+    margin: 0 auto 60px;
+}
+
+.section-heading h2 {
+    font-size: clamp(2rem, 4vw, 3rem);
+    margin: 18px 0;
+}
+
+.section-heading p {
+    font-size: 1.05rem;
+}
+
+.section-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+
+    padding: 8px 17px;
+
+    border: 1px solid rgba(148, 104, 255, 0.25);
+    border-radius: 50px;
+
+    background: rgba(148, 104, 255, 0.12);
+    color: #c5adff;
+
+    font-size: 0.82rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+}
+
+.section-subheading {
+    text-align: center;
+    max-width: 760px;
+    margin: 85px auto 35px;
+}
+
+.section-subheading h3 {
+    font-size: clamp(1.5rem, 3vw, 2rem);
+    margin: 18px 0 12px;
+}
+
+.section-subheading p {
+    font-size: 0.98rem;
+}
+
+.section-subheading p + p {
+    margin-top: 12px;
+}
+
+.gradient-text {
+    display: inline-block;
+    background: var(--gradient-main);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+.small-note {
+    margin-top: 20px;
+    text-align: center;
+    font-size: 0.84rem;
+    color: var(--text-muted);
+}
+
+.small-note a {
+    color: var(--cyan);
+}
+
+.small-note a:hover {
+    text-decoration: underline;
+}
+
+
+/* =====================================================
+   4. BARRE DE NAVIGATION
+   ===================================================== */
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+
+    background: rgba(8, 13, 28, 0.88);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+
+    border-bottom: 1px solid var(--border);
+}
+
+.navbar {
+    max-width: 1300px;
+    height: 82px;
+    margin: auto;
+    padding: 0 30px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+.logo {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+
+    font-size: 1.45rem;
+    font-weight: 800;
+    white-space: nowrap;
+}
+
+.logo > i {
+    color: var(--purple);
+    font-size: 1.7rem;
+}
+
+.logo .accent {
+    color: var(--cyan);
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+}
+
+.nav-links a {
+    display: inline-block;
+    padding: 11px 13px;
+
+    color: var(--text-secondary);
+    font-size: 0.88rem;
+    font-weight: 500;
+
+    border-radius: 10px;
+    transition: var(--transition);
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    color: white;
+    background: rgba(148, 104, 255, 0.16);
+}
+
+.menu-toggle {
+    display: none;
+    padding: 10px 14px;
+
+    background: transparent;
+    color: white;
+
+    border: 1px solid var(--border);
+    border-radius: 10px;
+
+    font-size: 1.3rem;
+}
+
+
+/* =====================================================
+   5. BOUTONS
+   ===================================================== */
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+
+    padding: 15px 26px;
+
+    border: 1px solid transparent;
+    border-radius: 13px;
+
+    font-size: 0.95rem;
+    font-weight: 700;
+
+    transition: var(--transition);
+}
+
+.btn-primary {
+    background: var(--gradient-main);
+    color: #080d1c;
+    box-shadow: 0 8px 25px rgba(148, 104, 255, 0.18);
+}
+
+.btn-primary:hover:not(:disabled) {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 35px rgba(148, 104, 255, 0.38);
+}
+
+.btn-secondary {
+    background: rgba(255, 255, 255, 0.04);
+    color: white;
+    border-color: var(--border);
+}
+
+.btn-secondary:hover:not(:disabled) {
+    border-color: var(--purple);
+    background: rgba(148, 104, 255, 0.1);
+    transform: translateY(-3px);
+}
+
+.btn:disabled {
+    opacity: 0.45;
+    transform: none;
+    box-shadow: none;
+}
+
+
+/* =====================================================
+   6. ACCUEIL
+   ===================================================== */
+
+.hero {
+    min-height: 100vh;
+    padding-top: 150px;
+    padding-bottom: 100px;
+
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    align-items: center;
+    gap: 65px;
+
+    overflow: hidden;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    animation: fadeUp 0.9s ease both;
+}
+
+.hero h1 {
+    font-size: clamp(3rem, 5.3vw, 5.2rem);
+    font-weight: 800;
+    line-height: 1.13;
+    margin-bottom: 28px;
+}
+
+.hero-description {
+    max-width: 570px;
+    font-size: 1.08rem;
+    line-height: 1.9;
+}
+
+.hero-buttons {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    flex-wrap: wrap;
+    margin-top: 35px;
+}
+
+.hero-info {
+    display: flex;
+    gap: 24px;
+    flex-wrap: wrap;
+    margin-top: 45px;
+}
+
+.hero-info span {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+
+    color: var(--text-muted);
+    font-size: 0.82rem;
+}
+
+.hero-info i {
+    color: var(--cyan);
+}
+
+
+/* =====================================================
+   7. GLOBE ANIME
+   ===================================================== */
+
+.hero-visual {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 0;
+}
+
+.hero-orbit {
+    position: relative;
+
+    width: min(100%, 430px);
+    aspect-ratio: 1;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid rgba(148, 104, 255, 0.22);
+    border-radius: 50%;
+
+    background: radial-gradient(
+        circle,
+        rgba(148, 104, 255, 0.1),
+        transparent 66%
+    );
+
+    animation: orbitFloat 6s ease-in-out infinite;
+}
+
+.hero-orbit::before {
+    content: "";
+    position: absolute;
+    inset: 55px;
+
+    border: 1px dashed rgba(56, 217, 255, 0.25);
+    border-radius: 50%;
+}
+
+.hero-orbit::after {
+    content: "";
+    position: absolute;
+    inset: 105px;
+
+    border: 1px solid rgba(148, 104, 255, 0.15);
+    border-radius: 50%;
+}
+
+.orbit-center {
+    width: 155px;
+    height: 155px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: linear-gradient(
+        145deg,
+        rgba(148, 104, 255, 0.25),
+        rgba(56, 217, 255, 0.15)
+    );
+
+    border: 1px solid rgba(148, 104, 255, 0.45);
+    border-radius: 50%;
+
+    box-shadow: 0 0 70px rgba(148, 104, 255, 0.25);
+
+    z-index: 2;
+}
+
+.orbit-center i {
+    font-size: 5rem;
+    background: var(--gradient-main);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+.orbit-icon {
+    position: absolute;
+
+    width: 66px;
+    height: 66px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 18px;
+
+    box-shadow: var(--shadow-card);
+    font-size: 2rem;
+    z-index: 3;
+
+    animation: iconFloat 4s ease-in-out infinite;
+}
+
+.orbit-html {
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #ff784f;
+}
+
+.orbit-css {
+    top: 45%;
+    right: -25px;
+    color: #43a7ff;
+    animation-delay: 1s;
+}
+
+.orbit-js {
+    bottom: 0;
+    left: 45%;
+    color: #f7df55;
+    animation-delay: 2s;
+}
+
+.orbit-lock {
+    top: 45%;
+    left: -25px;
+    color: var(--green);
+    animation-delay: 1.5s;
+}
+
+
+/* =====================================================
+   8. PRESENTATION
+   ===================================================== */
+
+.intro-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 25px;
+}
+
+.info-card {
+    padding: 35px;
+
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-large);
+
+    transition: var(--transition);
+}
+
+.info-card:hover {
+    transform: translateY(-7px);
+    border-color: rgba(148, 104, 255, 0.4);
+    box-shadow: var(--shadow-glow);
+}
+
+.info-card > i {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 65px;
+    height: 65px;
+
+    background: rgba(148, 104, 255, 0.12);
+    border-radius: 17px;
+
+    color: var(--purple);
+    font-size: 1.8rem;
+    margin-bottom: 25px;
+}
+
+.info-card h3 {
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+}
+
+.info-card p {
+    font-size: 0.94rem;
+}
+
+
+/* =====================================================
+   9. CARTES DES RUBRIQUES
+   ===================================================== */
+
+.topics-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 25px;
+}
+
+.topic-card {
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    min-height: 300px;
+    padding: 35px;
+
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-large);
+
+    overflow: hidden;
+    transition: var(--transition);
+}
+
+.topic-card::before {
+    content: "";
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 3px;
+
+    background: var(--gradient-main);
+    transform: scaleX(0);
+    transform-origin: left;
+
+    transition: var(--transition);
+}
+
+.topic-card:hover {
+    transform: translateY(-8px);
+    background: var(--bg-card-hover);
+    border-color: rgba(148, 104, 255, 0.35);
+    box-shadow: var(--shadow-glow);
+}
+
+.topic-card:hover::before {
+    transform: scaleX(1);
+}
+
+.topic-icon {
+    width: 65px;
+    height: 65px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 18px;
+    font-size: 1.8rem;
+    margin-bottom: 25px;
+}
+
+.topic-icon.purple {
+    background: rgba(148, 104, 255, 0.15);
+    color: var(--purple);
+}
+
+.topic-icon.blue {
+    background: rgba(80, 139, 255, 0.15);
+    color: var(--blue);
+}
+
+.topic-icon.cyan {
+    background: rgba(56, 217, 255, 0.13);
+    color: var(--cyan);
+}
+
+.topic-icon.orange {
+    background: rgba(255, 180, 92, 0.13);
+    color: var(--orange);
+}
+
+.topic-icon.red {
+    background: rgba(255, 100, 126, 0.13);
+    color: var(--red);
+}
+
+.topic-icon.green {
+    background: rgba(66, 223, 162, 0.13);
+    color: var(--green);
+}
+
+.topic-card h3 {
+    font-size: 1.25rem;
+    margin-bottom: 14px;
+}
+
+.topic-card p {
+    font-size: 0.94rem;
+    margin-bottom: 25px;
+}
+
+.topic-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+
+    margin-top: auto;
+
+    color: var(--cyan);
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.topic-link i {
+    transition: var(--transition);
+}
+
+.topic-card:hover .topic-link i {
+    transform: translateX(6px);
+}
+
+
+/* =====================================================
+   10. FRISE CHRONOLOGIQUE
+   ===================================================== */
+
+.timeline-container {
+    position: relative;
+    max-width: 950px;
+    margin: 0 auto;
+    padding: 15px 0;
+}
+
+.timeline-container::before {
+    content: "";
+    position: absolute;
+
+    top: 0;
+    bottom: 0;
+    left: 50%;
+
+    width: 3px;
+    transform: translateX(-50%);
+
+    background: linear-gradient(
+        to bottom,
+        var(--purple),
+        var(--blue),
+        var(--cyan)
+    );
+}
+
+.timeline-item {
+    position: relative;
+    width: 50%;
+    padding: 0 50px 55px 0;
+}
+
+.timeline-item:nth-child(even) {
+    margin-left: 50%;
+    padding: 0 0 55px 50px;
+}
+
+.timeline-item::before {
+    content: "";
+    position: absolute;
+    top: 24px;
+    right: -9px;
+
+    width: 18px;
+    height: 18px;
+
+    background: var(--purple);
+    border: 4px solid var(--bg-main);
+    border-radius: 50%;
+
+    box-shadow: 0 0 18px rgba(148, 104, 255, 0.5);
+
+    z-index: 2;
+}
+
+.timeline-item:nth-child(even)::before {
+    left: -9px;
+    right: auto;
+    background: var(--cyan);
+}
+
+.timeline-date {
+    color: var(--purple);
+    font-size: 2rem;
+    font-weight: 800;
+    margin-bottom: 14px;
+}
+
+.timeline-item:nth-child(even) .timeline-date {
+    color: var(--cyan);
+}
+
+.timeline-content {
+    padding: 30px;
+
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-medium);
+
+    box-shadow: var(--shadow-card);
+    transition: var(--transition);
+}
+
+.timeline-content:hover {
+    transform: translateY(-5px);
+    border-color: rgba(148, 104, 255, 0.35);
+}
+
+.timeline-icon {
+    width: 52px;
+    height: 52px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: rgba(148, 104, 255, 0.14);
+    border-radius: 14px;
+
+    color: var(--purple);
+    font-size: 1.5rem;
+    margin-bottom: 18px;
+}
+
+.timeline-content h3 {
+    font-size: 1.18rem;
+    margin-bottom: 12px;
+}
+
+.timeline-content p {
+    font-size: 0.92rem;
+}
+
+
+/* =====================================================
+   11. CARTES DE CONTENU
+   ===================================================== */
+
+.content-card {
+    padding: 35px;
+
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-large);
+
+    box-shadow: var(--shadow-card);
+}
+
+.content-card h3 {
+    font-size: 1.4rem;
+    margin-bottom: 20px;
+}
+
+.content-card h3 i {
+    color: var(--purple);
+    margin-right: 10px;
+}
+
+.content-card h4 {
+    font-size: 1.13rem;
+    margin-bottom: 15px;
+}
+
+.content-card p + p {
+    margin-top: 16px;
+}
+
+
+/* =====================================================
+   12. URL INTERACTIVE
+   ===================================================== */
+
+.url-example {
+    display: flex;
+    align-items: stretch;
+    flex-wrap: wrap;
+
+    margin: 30px 0;
+    padding: 22px;
+
+    background: #080f20;
+    border: 1px solid var(--border);
+    border-radius: 15px;
+
+    font-family: Consolas, monospace;
+    font-size: clamp(0.84rem, 2vw, 1.15rem);
+}
+
+.url-part {
+    padding: 10px 5px;
+
+    background: transparent;
+    border: none;
+    border-radius: 8px;
+
+    font-family: inherit;
+    font-size: inherit;
+    font-weight: 700;
+
+    overflow-wrap: anywhere;
+    transition: var(--transition);
+}
+
+.url-part:hover,
+.url-part.selected {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.url-part.protocol {
+    color: var(--purple);
+}
+
+.url-part.domain {
+    color: var(--cyan);
+}
+
+.url-part.path {
+    color: var(--green);
+}
+
+.url-part.parameters {
+    color: var(--orange);
+}
+
+.url-explanation {
+    min-height: 120px;
+    padding: 25px;
+
+    background: rgba(148, 104, 255, 0.08);
+    border: 1px solid rgba(148, 104, 255, 0.22);
+    border-radius: 15px;
+}
+
+.url-explanation h4 {
+    color: #c5adff;
+    margin-bottom: 10px;
+}
+
+
+/* =====================================================
+   13. CODES HTTP
+   ===================================================== */
+
+.http-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 25px;
+}
+
+.http-card {
+    padding: 40px 25px;
+
+    text-align: center;
+    background: var(--bg-card);
+
+    border: 1px solid var(--border);
+    border-radius: var(--radius-large);
+
+    transition: var(--transition);
+}
+
+.http-card:hover {
+    transform: translateY(-6px);
+}
+
+.http-number {
+    display: block;
+
+    font-size: 3.5rem;
+    font-weight: 800;
+    margin-bottom: 12px;
+}
+
+.http-card h4 {
+    font-size: 1.15rem;
+    margin-bottom: 14px;
+}
+
+.http-card p {
+    font-size: 0.91rem;
+}
+
+.http-card.success {
+    border-color: rgba(66, 223, 162, 0.25);
+}
+
+.http-card.success .http-number {
+    color: var(--green);
+}
+
+.http-card.warning {
+    border-color: rgba(255, 180, 92, 0.25);
+}
+
+.http-card.warning .http-number {
+    color: var(--orange);
+}
+
+.http-card.danger {
+    border-color: rgba(255, 100, 126, 0.25);
+}
+
+.http-card.danger .http-number {
+    color: var(--red);
+}
+
+
+/* =====================================================
+   14. REDIRECTIONS
+   ===================================================== */
+
+.redirect-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 25px;
+}
+
+.redirect-example {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+
+    margin-top: 25px;
+    padding: 20px;
+
+    background: rgba(80, 139, 255, 0.07);
+    border-radius: 12px;
+}
+
+.redirect-example span {
+    color: var(--cyan);
+    font-size: 0.88rem;
+    font-weight: 600;
+}
+
+.redirect-example i {
+    color: var(--purple);
+}
+
+
+/* =====================================================
+   15. QUIZ GENERAUX
+   ===================================================== */
+
+.quiz-container {
+    max-width: 780px;
+    margin: 90px auto 0;
+    padding: 42px;
+
+    background: var(--bg-card);
+
+    border: 1px solid rgba(148, 104, 255, 0.3);
+    border-radius: var(--radius-large);
+
+    box-shadow: var(--shadow-glow);
+}
+
+.quiz-header {
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+.quiz-header h3 {
+    font-size: 1.7rem;
+    margin: 20px 0 12px;
+}
+
+.quiz-progress {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+
+    margin-bottom: 25px;
+
+    color: var(--text-secondary);
+    font-size: 0.88rem;
+}
+
+.quiz-question {
+    padding: 25px;
+    margin-bottom: 25px;
+
+    background: rgba(255, 255, 255, 0.035);
+    border-radius: 15px;
+
+    text-align: center;
+    font-size: 1.13rem;
+    font-weight: 600;
+}
+
+.quiz-options {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 15px;
+}
+
+.quiz-option {
+    padding: 17px 15px;
+
+    background: rgba(255, 255, 255, 0.04);
+    color: var(--text-main);
+
+    border: 1px solid var(--border);
+    border-radius: 12px;
+
+    font-weight: 700;
+    transition: var(--transition);
+}
+
+.quiz-option:not(:disabled):hover {
+    transform: translateY(-3px);
+    background: rgba(148, 104, 255, 0.15);
+    border-color: var(--purple);
+}
+
+.quiz-option.correct {
+    background: rgba(66, 223, 162, 0.14);
+    border-color: var(--green);
+    color: var(--green);
+}
+
+.quiz-option.incorrect {
+    background: rgba(255, 100, 126, 0.14);
+    border-color: var(--red);
+    color: var(--red);
+}
+
+.quiz-feedback {
+    margin-top: 22px;
+    text-align: center;
+    font-size: 0.95rem;
+    font-weight: 600;
+}
+
+.quiz-feedback:empty {
+    display: none;
+}
+
+.quiz-feedback.success {
+    color: var(--green);
+}
+
+.quiz-feedback.error {
+    color: var(--red);
+}
+
+.quiz-container > .btn {
+    display: flex;
+    width: fit-content;
+    margin: 25px auto 0;
+}
+
+#phishing-options {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+
+/* =====================================================
+   16. CYCLE DE VIE DES DOMAINES
+   ===================================================== */
+
+.domain-cycle {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+}
+
+.cycle-step {
+    flex: 1;
+    min-width: 0;
+
+    padding: 27px 15px;
+
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 18px;
+
+    text-align: center;
+    transition: var(--transition);
+}
+
+.cycle-step:hover {
+    transform: translateY(-5px);
+    border-color: var(--purple);
+}
+
+.cycle-icon {
+    width: 60px;
+    height: 60px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin: 0 auto 20px;
+
+    background: rgba(148, 104, 255, 0.13);
+    border-radius: 16px;
+
+    color: var(--purple);
+    font-size: 1.6rem;
+}
+
+.cycle-step h4 {
+    font-size: 1rem;
+    margin-bottom: 12px;
+}
+
+.cycle-step p {
+    font-size: 0.84rem;
+}
+
+.cycle-arrow {
+    flex-shrink: 0;
+    color: var(--cyan);
+    font-size: 1.25rem;
+}
+
+
+/* =====================================================
+   17. TARIFS DES DOMAINES
+   ===================================================== */
+
+.domain-price-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 25px;
+}
+
+.price-card {
+    padding: 38px 28px;
+    text-align: center;
+
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-large);
+
+    transition: var(--transition);
+}
+
+.price-card:hover {
+    transform: translateY(-6px);
+}
+
+.price-card.featured {
+    border-color: var(--purple);
+    box-shadow: var(--shadow-glow);
+}
+
+.domain-extension {
+    display: block;
+
+    color: var(--cyan);
+    font-size: 3rem;
+    font-weight: 800;
+
+    margin-bottom: 12px;
+}
+
+.price-card.featured .domain-extension {
+    color: var(--purple);
+}
+
+.price-card h4 {
+    margin-bottom: 12px;
+}
+
+.price-card p {
+    font-size: 0.9rem;
+}
+
+.price-card strong {
+    color: var(--text-main);
+}
+
+.price-label {
+    display: inline-block;
+
+    margin: 25px 0 15px;
+    padding: 10px 15px;
+
+    background: rgba(148, 104, 255, 0.12);
+    border-radius: 10px;
+
+    color: #c5adff;
+    font-size: 0.82rem;
+    font-weight: 600;
+}
+
+
+/* =====================================================
+   18. NOUVEAU DESIGN : ZONE DNS PRINCIPALE
+   ===================================================== */
+
+/*
+   Cette partie remplace l'ancienne présentation
+   à trois étapes par un laboratoire pédagogique.
+*/
+
+.dns-container {
+    margin-top: 100px;
+    padding: 55px 45px;
+
+    background: linear-gradient(
+        145deg,
+        #151e35,
+        #111a30
+    );
+
+    border: 1px solid rgba(148, 104, 255, 0.22);
+    border-radius: 30px;
+
+    box-shadow:
+        0 15px 45px rgba(0, 0, 0, 0.18),
+        0 0 45px rgba(148, 104, 255, 0.05);
+}
+
+.dns-container > .section-subheading {
+    margin-top: 0;
+}
+
+.dns-container > .section-subheading h3 {
+    font-size: clamp(2rem, 3.5vw, 2.7rem);
+}
+
+.dns-container > .section-subheading p {
+    max-width: 720px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+/* =====================================================
+   19. INTRODUCTION AU DNS
+   ===================================================== */
+
+.dns-introduction {
+    max-width: 900px;
+    margin: 45px auto 0;
+}
+
+.dns-introduction .content-card {
+    background: rgba(8, 13, 28, 0.45);
+    border-color: rgba(56, 217, 255, 0.18);
+}
+
+.dns-introduction h3 {
+    font-size: 1.45rem;
+}
+
+.dns-introduction h3 i {
+    color: var(--cyan);
+}
+
+.dns-introduction p {
+    line-height: 1.9;
+}
+
+
+/* =====================================================
+   20. NOM DE DOMAINE VS ADRESSE IP
+   ===================================================== */
+
+.dns-comparison {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 65px minmax(0, 1fr);
+    align-items: center;
+    gap: 20px;
+
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.dns-compare-card {
+    min-height: 285px;
+    padding: 35px 25px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+
+    text-align: center;
+
+    background: #0d162a;
+    border: 1px solid var(--border);
+    border-radius: 22px;
+
+    transition: var(--transition);
+}
+
+.dns-compare-card:hover {
+    transform: translateY(-5px);
+    border-color: rgba(148, 104, 255, 0.45);
+}
+
+.dns-compare-icon {
+    width: 70px;
+    height: 70px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: rgba(148, 104, 255, 0.12);
+    border-radius: 20px;
+
+    color: var(--purple);
+    font-size: 2rem;
+}
+
+.dns-compare-card:last-child .dns-compare-icon {
+    background: rgba(56, 217, 255, 0.1);
+    color: var(--cyan);
+}
+
+.dns-compare-card h4 {
+    font-size: 1.2rem;
+}
+
+.dns-compare-card strong {
+    color: var(--cyan);
+    font-size: 1.5rem;
+    overflow-wrap: anywhere;
+}
+
+.dns-compare-card p {
+    font-size: 0.9rem;
+}
+
+.dns-compare-arrow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: var(--purple);
+    font-size: 1.6rem;
+}
+
+
+/* =====================================================
+   21. LABORATOIRE DNS
+   ===================================================== */
+
+.dns-laboratory {
+    margin-top: 100px;
+    padding: 45px 35px;
+
+    background: rgba(8, 13, 28, 0.42);
+    border: 1px solid rgba(148, 104, 255, 0.25);
+    border-radius: 25px;
+}
+
+.dns-laboratory > .section-subheading {
+    margin-top: 0;
+}
+
+
+/* =====================================================
+   22. CHAMP DE RECHERCHE DNS
+   ===================================================== */
+
+.dns-search-form {
+    max-width: 780px;
+    margin: 0 auto;
+}
+
+.dns-search-form > label {
+    display: block;
+
+    margin-bottom: 14px;
+
+    color: var(--text-main);
+    font-weight: 700;
+    font-size: 0.95rem;
+}
+
+.dns-search-row {
+    display: flex;
+    align-items: stretch;
+    gap: 12px;
+}
+
+.dns-search-row input {
+    flex: 1;
+    min-width: 0;
+
+    padding: 16px 20px;
+
+    background: #0b1427;
+    color: var(--text-main);
+
+    border: 1px solid rgba(148, 104, 255, 0.3);
+    border-radius: 13px;
+
+    font-size: 1rem;
+    transition: var(--transition);
+}
+
+.dns-search-row input::placeholder {
+    color: var(--text-muted);
+}
+
+.dns-search-row input:focus {
+    border-color: var(--cyan);
+    box-shadow: 0 0 0 4px rgba(56, 217, 255, 0.08);
+    outline: none;
+}
+
+.dns-search-row .btn {
+    flex-shrink: 0;
+}
+
+
+/* =====================================================
+   23. SELECTION DU MODE DNS
+   ===================================================== */
+
+.dns-mode-selector {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    flex-wrap: wrap;
+    gap: 15px;
+
+    margin: 45px auto 0;
+    padding: 0;
+
+    border: none;
+}
+
+.dns-mode-selector legend {
+    width: 100%;
+    float: left;
+    margin-bottom: 16px;
+
+    text-align: center;
+    color: var(--text-main);
+    font-weight: 700;
+}
+
+.dns-mode-selector legend + * {
+    clear: both;
+}
+
+.dns-mode-option {
+    flex: 1 1 240px;
+    max-width: 360px;
+    cursor: pointer;
+}
+
+.dns-mode-option input {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    opacity: 0;
+}
+
+.dns-mode-option span {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+
+    min-height: 66px;
+    padding: 15px 20px;
+
+    background: #0d162a;
+    color: var(--text-secondary);
+
+    border: 1px solid var(--border);
+    border-radius: 14px;
+
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-align: center;
+
+    transition: var(--transition);
+}
+
+.dns-mode-option span i {
+    color: var(--purple);
+}
+
+.dns-mode-option input:checked + span {
+    background: rgba(148, 104, 255, 0.15);
+    border-color: var(--purple);
+    color: white;
+
+    box-shadow: 0 0 22px rgba(148, 104, 255, 0.1);
+}
+
+.dns-mode-option input:focus-visible + span {
+    outline: 3px solid var(--cyan);
+    outline-offset: 4px;
+}
+
+.dns-mode-option:hover span {
+    border-color: rgba(148, 104, 255, 0.55);
+}
+
+
+/* =====================================================
+   24. BARRE DE PROGRESSION DNS
+   ===================================================== */
+
+.dns-simulation-progress {
+    max-width: 880px;
+    margin: 50px auto 30px;
+}
+
+.dns-progress-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+
+    margin-bottom: 13px;
+
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+#dns-progress-percent {
+    color: var(--cyan);
+}
+
+.dns-progress-track {
+    height: 10px;
+    width: 100%;
+
+    background: #0b1427;
+    border: 1px solid var(--border);
+    border-radius: 50px;
+
+    overflow: hidden;
+}
+
+.dns-progress-fill {
+    width: 0%;
+    height: 100%;
+
+    background: var(--gradient-main);
+    border-radius: 50px;
+
+    box-shadow: 0 0 18px rgba(56, 217, 255, 0.3);
+
+    transition: width 0.45s ease;
+}
+
+
+/* =====================================================
+   25. LES SIX ETAPES DNS
+   ===================================================== */
+
+.dns-steps-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 18px;
+
+    margin: 35px 0;
+}
+
+.dns-step {
+    position: relative;
+
+    min-height: 195px;
+    padding: 28px 18px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+
+    background: #0d162a;
+    border: 1px solid var(--border);
+    border-radius: 20px;
+
+    text-align: center;
+
+    transition:
+        background 0.35s ease,
+        border-color 0.35s ease,
+        box-shadow 0.35s ease,
+        transform 0.35s ease;
+}
+
+.dns-step > i {
+    font-size: 2.3rem;
+    color: var(--text-muted);
+    transition: var(--transition);
+}
+
+.dns-step h4 {
+    font-size: 1rem;
+}
+
+.dns-step p {
+    font-size: 0.82rem;
+}
+
+/* Etape en cours */
+
+.dns-step.active {
+    transform: translateY(-5px);
+
+    background: linear-gradient(
+        145deg,
+        rgba(148, 104, 255, 0.18),
+        rgba(56, 217, 255, 0.09)
+    );
+
+    border-color: var(--cyan);
+
+    box-shadow:
+        0 0 30px rgba(56, 217, 255, 0.12),
+        inset 0 0 20px rgba(148, 104, 255, 0.04);
+}
+
+.dns-step.active > i {
+    color: var(--cyan);
+    transform: scale(1.1);
+}
+
+/* Etape déjà terminée */
+
+.dns-step.completed {
+    border-color: rgba(66, 223, 162, 0.45);
+    background: rgba(66, 223, 162, 0.045);
+}
+
+.dns-step.completed > i {
+    color: var(--green);
+}
+
+
+/* =====================================================
+   26. EXPLICATION DETAILLEE DE CHAQUE ETAPE
+   ===================================================== */
+
+.dns-detail-panel {
+    min-height: 230px;
+    margin-top: 30px;
+    padding: 35px;
+
+    background: linear-gradient(
+        145deg,
+        rgba(148, 104, 255, 0.12),
+        rgba(56, 217, 255, 0.045)
+    );
+
+    border: 1px solid rgba(148, 104, 255, 0.3);
+    border-radius: 20px;
+}
+
+.dns-detail-header {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    flex-wrap: wrap;
+
+    margin-bottom: 20px;
+}
+
+.dns-detail-number {
+    display: inline-block;
+
+    padding: 8px 13px;
+
+    background: rgba(148, 104, 255, 0.18);
+    border-radius: 9px;
+
+    color: #ccb8ff;
+    font-size: 0.79rem;
+    font-weight: 800;
+    letter-spacing: 0.05em;
+}
+
+.dns-detail-header h4 {
+    color: white;
+    font-size: 1.35rem;
+}
+
+.dns-detail-panel p {
+    line-height: 1.9;
+    font-size: 0.97rem;
+}
+
+#dns-detail-example {
+    margin-top: 20px;
+    padding-left: 18px;
+
+    border-left: 3px solid var(--cyan);
+
+    color: #c4d5ed;
+    font-style: italic;
+}
+
+
+/* =====================================================
+   27. COMMANDES DE LA SIMULATION DNS
+   ===================================================== */
+
+.dns-controls {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 13px;
+
+    margin-top: 30px;
+}
+
+.dns-controls .btn {
+    min-height: 53px;
+}
+
+.dns-status-message {
+    min-height: 28px;
+    margin-top: 25px;
+
+    color: var(--cyan);
+    text-align: center;
+    font-size: 0.94rem;
+}
+
+
+/* =====================================================
+   28. EXPLICATION DU CACHE DNS
+   ===================================================== */
+
+.dns-cache-section {
+    margin-top: 100px;
+}
+
+.dns-cache-comparison {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px;
+}
+
+.dns-cache-comparison .content-card {
+    background: #0d162a;
+}
+
+.dns-cache-comparison h4 {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+
+    color: white;
+}
+
+.dns-cache-comparison h4 i {
+    color: var(--purple);
+    font-size: 1.4rem;
+}
+
+.dns-cache-comparison .content-card:last-child h4 i {
+    color: var(--green);
+}
+
+.cache-path {
+    margin-top: 25px;
+    padding: 18px;
+
+    background: rgba(80, 139, 255, 0.09);
+    border: 1px solid rgba(80, 139, 255, 0.18);
+    border-radius: 12px;
+
+    color: var(--cyan);
+    font-size: 0.86rem;
+    font-weight: 600;
+    text-align: center;
+
+    overflow-wrap: anywhere;
+}
+
+
+/* =====================================================
+   29. DECOUVRIR SON IP PUBLIQUE
+   ===================================================== */
+
+.dns-my-ip-section {
+    margin-top: 105px;
+}
+
+.dns-my-ip-card {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 45px 30px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 18px;
+
+    text-align: center;
+
+    background: linear-gradient(
+        145deg,
+        #121c36,
+        #0d2336
+    );
+
+    border: 1px solid rgba(56, 217, 255, 0.3);
+    border-radius: 25px;
+
+    box-shadow: 0 0 45px rgba(56, 217, 255, 0.065);
+}
+
+.dns-my-ip-icon {
+    width: 80px;
+    height: 80px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: rgba(56, 217, 255, 0.11);
+    border-radius: 22px;
+
+    color: var(--cyan);
+    font-size: 2.4rem;
+}
+
+.dns-my-ip-card > p:first-of-type {
+    font-size: 0.94rem;
+}
+
+#my-public-ip {
+    display: block;
+    max-width: 100%;
+
+    color: var(--cyan);
+    font-size: clamp(1.35rem, 3.5vw, 2.4rem);
+    font-weight: 800;
+
+    letter-spacing: 0.01em;
+    overflow-wrap: anywhere;
+}
+
+#my-ip-status {
+    max-width: 550px;
+    font-size: 0.9rem;
+}
+
+.dns-my-ip-card .btn {
+    margin-top: 10px;
+}
+
+
+/* =====================================================
+   30. MESSAGE DE CONFIDENTIALITE
+   ===================================================== */
+
+.dns-privacy-notice {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+
+    max-width: 900px;
+    margin: 28px auto 0;
+    padding: 25px;
+
+    background: rgba(255, 180, 92, 0.065);
+    border: 1px solid rgba(255, 180, 92, 0.2);
+    border-radius: 17px;
+}
+
+.dns-privacy-notice > i {
+    color: var(--orange);
+    font-size: 1.7rem;
+    margin-top: 4px;
+}
+
+.dns-privacy-notice p {
+    font-size: 0.9rem;
+    line-height: 1.85;
+}
+
+
+/* =====================================================
+   31. IP PUBLIQUE ET IP PRIVEE
+   ===================================================== */
+
+.dns-ip-types {
+    margin-top: 90px;
+}
+
+.dns-ip-types-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 25px;
+}
+
+.dns-ip-types-grid .content-card {
+    background: #0d162a;
+}
+
+.dns-ip-types-grid h4 {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    font-size: 1.3rem;
+}
+
+.dns-ip-types-grid h4 i {
+    color: var(--purple);
+}
+
+.dns-ip-types-grid .content-card:last-child h4 i {
+    color: var(--cyan);
+}
+
+
+/* =====================================================
+   32. QUIZ DNS
+   ===================================================== */
+
+#dns-quiz {
+    max-width: 850px;
+    margin-top: 100px;
+
+    background: linear-gradient(
+        145deg,
+        #19233d,
+        #111b32
+    );
+}
+
+#dns-options {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+#dns-options .quiz-option {
+    min-height: 115px;
+    line-height: 1.5;
+}
+
+
+/* =====================================================
+   33. ORGANISMES DES STANDARDS DU WEB
+   ===================================================== */
+
+.standards-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 25px;
+}
+
+.standard-card {
+    display: flex;
+    flex-direction: column;
+
+    padding: 35px;
+
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-large);
+
+    transition: var(--transition);
+}
+
+.standard-card:hover {
+    transform: translateY(-6px);
+    border-color: rgba(148, 104, 255, 0.35);
+}
+
+.standard-icon {
+    width: 68px;
+    height: 68px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: rgba(148, 104, 255, 0.13);
+    border-radius: 18px;
+
+    color: var(--purple);
+    font-size: 1.8rem;
+    margin-bottom: 25px;
+}
+
+.standard-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 16px;
+}
+
+.standard-card p {
+    font-size: 0.93rem;
+    margin-bottom: 25px;
+}
+
+.standard-card a {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+
+    margin-top: auto;
+
+    color: var(--cyan);
+    font-size: 0.9rem;
+    font-weight: 700;
+}
+
+.standard-card a:hover {
+    color: white;
+}
+
+
+/* =====================================================
+   34. COMPARAISON ENTRE NAVIGATEURS
+   ===================================================== */
+
+.browser-comparison {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 30px;
+}
+
+.browser-demo {
+    background: var(--bg-card);
+
+    border: 1px solid var(--border);
+    border-radius: 20px;
+
+    overflow: hidden;
+    box-shadow: var(--shadow-card);
+}
+
+.browser-broken {
+    border-color: rgba(255, 100, 126, 0.3);
+}
+
+.browser-correct {
+    border-color: rgba(66, 223, 162, 0.3);
+}
+
+.browser-topbar {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+
+    padding: 15px;
+
+    background: #202a42;
+    color: var(--text-secondary);
+
+    font-size: 0.79rem;
+}
+
+.browser-dot {
+    flex-shrink: 0;
+
+    width: 10px;
+    height: 10px;
+
+    background: var(--red);
+    border-radius: 50%;
+}
+
+.browser-dot:nth-child(2) {
+    background: var(--orange);
+}
+
+.browser-dot:nth-child(3) {
+    background: var(--green);
+    margin-right: 10px;
+}
+
+.browser-content {
+    min-height: 250px;
+    padding: 35px;
+}
+
+.browser-content h4 {
+    font-size: 1.6rem;
+    margin-bottom: 15px;
+}
+
+.browser-content p {
+    margin-bottom: 22px;
+}
+
+.demo-button {
+    display: inline-block;
+    padding: 10px 22px;
+
+    border-radius: 9px;
+    font-weight: 600;
+}
+
+.browser-broken .browser-content {
+    background: #28242d;
+    text-align: left;
+}
+
+.browser-broken .browser-content h4 {
+    color: #ff8294;
+    transform: rotate(-2deg);
+}
+
+.browser-broken .browser-content p {
+    font-family: Georgia, serif;
+    color: #bcb0b5;
+    font-size: 0.9rem;
+}
+
+.browser-broken .demo-button {
+    background: #5f4450;
+    color: #ffd2d8;
+
+    border: 2px dashed var(--red);
+    transform: rotate(4deg);
+}
+
+.browser-correct .browser-content {
+    background: #122238;
+}
+
+.browser-correct .browser-content h4 {
+    color: white;
+}
+
+.browser-correct .demo-button {
+    background: var(--gradient-main);
+    color: #080d1c;
+}
+
+
+/* =====================================================
+   35. CARTES RETOURNABLES DE CYBERSECURITE
+   ===================================================== */
+
+.security-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 25px;
+}
+
+.flip-card {
+    display: block;
+
+    width: 100%;
+    height: 280px;
+
+    background: transparent;
+    border: none;
+
+    color: var(--text-main);
+    text-align: center;
+
+    perspective: 1000px;
+}
+
+.flip-card-inner {
+    position: relative;
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    transform-style: preserve-3d;
+    transition: transform 0.7s ease;
+}
+
+.flip-card.flipped .flip-card-inner {
+    transform: rotateY(180deg);
+}
+
+.flip-card-front,
+.flip-card-back {
+    position: absolute;
+    inset: 0;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 18px;
+
+    padding: 27px;
+
+    border: 1px solid var(--border);
+    border-radius: var(--radius-large);
+
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+}
+
+.flip-card-front {
+    background: linear-gradient(
+        145deg,
+        #1b2540,
+        #121a30
+    );
+}
+
+.flip-card-front i {
+    color: var(--purple);
+    font-size: 3.5rem;
+}
+
+.flip-card-front strong {
+    font-size: 1.4rem;
+}
+
+.flip-card-front span {
+    color: var(--text-muted);
+    font-size: 0.85rem;
+}
+
+.flip-card-back {
+    background: linear-gradient(
+        145deg,
+        #39236a,
+        #173954
+    );
+
+    border-color: var(--purple);
+    transform: rotateY(180deg);
+}
+
+.flip-card-back strong {
+    color: white;
+    font-size: 1.25rem;
+}
+
+.flip-card-back span {
+    color: #e1e7ff;
+    font-size: 0.91rem;
+    line-height: 1.7;
+}
+
+.flip-card:hover .flip-card-front {
+    border-color: var(--purple);
+    box-shadow: var(--shadow-glow);
+}
+
+
+/* =====================================================
+   36. CONSEILS DE CYBERSECURITE
+   ===================================================== */
+
+.security-advice-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 25px;
+
+    margin-top: 60px;
+}
+
+.advice-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.advice-list li {
+    position: relative;
+    padding-left: 30px;
+
+    color: var(--text-secondary);
+    font-size: 0.94rem;
+}
+
+.advice-list li::before {
+    content: "\f058";
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+
+    position: absolute;
+    left: 0;
+
+    color: var(--green);
+}
+
+
+/* =====================================================
+   37. QUIZ PHISHING
+   ===================================================== */
+
+.fake-email {
+    margin-bottom: 28px;
+
+    background: #f3f6fc;
+    color: #24304a;
+
+    border-radius: 16px;
+    overflow: hidden;
+    text-align: left;
+}
+
+.email-header {
+    padding: 22px;
+
+    background: #e7edf7;
+    border-bottom: 1px solid #dce3ef;
+}
+
+.email-header p {
+    color: #34415a;
+    font-size: 0.91rem;
+    overflow-wrap: anywhere;
+}
+
+.email-header p + p {
+    margin-top: 10px;
+}
+
+.email-header strong {
+    color: #15233b;
+}
+
+.email-body {
+    padding: 27px;
+}
+
+.email-body p {
+    color: #34415a;
+    font-size: 0.94rem;
+    margin-bottom: 16px;
+}
+
+.email-body p:last-child {
+    margin-bottom: 0;
+}
+
+
+/* =====================================================
+   38. TABLEAU DES SOURCES
+   ===================================================== */
+
+.table-wrapper {
+    overflow-x: auto;
+    margin-top: 25px;
+}
+
+.sources-table {
+    width: 100%;
+    min-width: 550px;
+    border-collapse: collapse;
+}
+
+.sources-table th,
+.sources-table td {
+    padding: 19px 20px;
+    text-align: left;
+
+    border-bottom: 1px solid var(--border);
+    font-size: 0.91rem;
+}
+
+.sources-table th {
+    background: rgba(56, 217, 255, 0.06);
+    color: var(--cyan);
+    font-weight: 700;
+}
+
+.sources-table td {
+    color: var(--text-secondary);
+}
+
+.sources-table tbody tr {
+    transition: var(--transition);
+}
+
+.sources-table tbody tr:hover {
+    background: rgba(255, 255, 255, 0.035);
+}
+
+.sources-table a {
+    color: var(--cyan);
+    font-weight: 600;
+}
+
+.sources-table a:hover {
+    text-decoration: underline;
+}
+
+.authors-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 25px;
+    margin-top: 30px;
+}
+
+.authors-grid strong {
+    color: var(--text-main);
+}
+
+
+/* =====================================================
+   39. PIED DE PAGE
+   ===================================================== */
+
+.footer {
+    padding: 65px 30px 25px;
+
+    background: #070b16;
+    border-top: 1px solid var(--border);
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: auto;
+
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 50px;
+
+    padding-bottom: 55px;
+}
+
+.footer-brand p {
+    max-width: 320px;
+    margin-top: 20px;
+    font-size: 0.92rem;
+}
+
+.footer-links {
+    display: flex;
+    flex-direction: column;
+    gap: 13px;
+}
+
+.footer-links h4 {
+    font-size: 1rem;
+    margin-bottom: 10px;
+}
+
+.footer-links a {
+    color: var(--text-secondary);
+    font-size: 0.89rem;
+    transition: var(--transition);
+}
+
+.footer-links a:hover {
+    color: var(--cyan);
+    transform: translateX(4px);
+}
+
+.footer-bottom {
+    max-width: 1200px;
+    margin: auto;
+    padding-top: 25px;
+
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+
+    border-top: 1px solid var(--border);
+}
+
+.footer-bottom p {
+    color: var(--text-muted);
+    font-size: 0.82rem;
+}
+
+
+/* =====================================================
+   40. BOUTON RETOUR EN HAUT
+   ===================================================== */
+
+.back-to-top {
+    position: fixed;
+    bottom: 28px;
+    right: 28px;
+
+    width: 50px;
+    height: 50px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: var(--gradient-main);
+    color: #080d1c;
+
+    border: none;
+    border-radius: 15px;
+
+    font-size: 1.2rem;
+    z-index: 900;
+
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(15px);
+
+    transition: var(--transition);
+}
+
+.back-to-top.visible {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.back-to-top:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-glow);
+}
+
+
+/* =====================================================
+   41. ANIMATIONS
+   ===================================================== */
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes orbitFloat {
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-18px);
+    }
+}
+
+@keyframes iconFloat {
+    0%, 100% {
+        margin-top: 0;
+    }
+
+    50% {
+        margin-top: -13px;
+    }
+}
+
+@keyframes glowPulse {
+    0%, 100% {
+        box-shadow: 0 0 15px rgba(148, 104, 255, 0.2);
+    }
+
+    50% {
+        box-shadow: 0 0 35px rgba(148, 104, 255, 0.5);
+    }
+}
+
+.reveal {
+    opacity: 0;
+    transform: translateY(35px);
+
+    transition:
+        opacity 0.7s ease,
+        transform 0.7s ease;
+}
+
+.reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+/* =====================================================
+   42. RESPONSIVE - ECRANS INTERMEDIAIRES
+   ===================================================== */
+
+@media (max-width: 1100px) {
+
+    .navbar {
+        padding: 0 25px;
+    }
+
+    .nav-links {
+        gap: 2px;
+    }
+
+    .nav-links a {
+        padding: 10px 9px;
+        font-size: 0.81rem;
+    }
+
+    .hero {
+        gap: 30px;
+    }
+
+    .hero h1 {
+        font-size: clamp(2.8rem, 5vw, 4.5rem);
+    }
+
+    .hero-orbit {
+        max-width: 350px;
+    }
+
+    .topics-grid,
+    .standards-grid,
+    .security-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .domain-cycle {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .cycle-step {
+        flex: 1 1 190px;
+        max-width: 240px;
+    }
+
+    .cycle-arrow {
+        display: none;
+    }
+
+    .dns-container {
+        padding: 45px 30px;
+    }
+
+    .dns-laboratory {
+        padding: 35px 25px;
+    }
+
+}
+
+
+/* =====================================================
+   43. RESPONSIVE - TABLETTES
+   ===================================================== */
+
+@media (max-width: 850px) {
+
+    .section {
+        padding: 85px 25px;
+    }
+
+    .navbar {
+        height: 72px;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .nav-links {
+        position: absolute;
+        top: 72px;
+        left: 0;
+
+        width: 100%;
+        padding: 15px 25px 25px;
+
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 5px;
+
+        background: rgba(8, 13, 28, 0.98);
+        border-bottom: 1px solid var(--border);
+
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(-15px);
+        pointer-events: none;
+
+        transition: var(--transition);
+    }
+
+    .nav-links.open {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+        pointer-events: auto;
+    }
+
+    .nav-links a {
+        display: block;
+        padding: 13px 17px;
+        font-size: 0.95rem;
+    }
+
+    .hero {
+        grid-template-columns: 1fr;
+        min-height: auto;
+
+        padding-top: 140px;
+        gap: 65px;
+
+        text-align: center;
+    }
+
+    .hero-description {
+        margin: auto;
+    }
+
+    .hero-buttons,
+    .hero-info {
+        justify-content: center;
+    }
+
+    .hero-orbit {
+        max-width: 350px;
+    }
+
+    .intro-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .timeline-container::before {
+        left: 12px;
+    }
+
+    .timeline-item,
+    .timeline-item:nth-child(even) {
+        width: 100%;
+        margin-left: 0;
+        padding: 0 0 40px 48px;
+    }
+
+    .timeline-item::before,
+    .timeline-item:nth-child(even)::before {
+        left: 3px;
+        right: auto;
+    }
+
+    .timeline-date {
+        font-size: 1.7rem;
+    }
+
+    .http-grid,
+    .domain-price-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .dns-steps-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .dns-comparison {
+        grid-template-columns: minmax(0, 1fr) 35px minmax(0, 1fr);
+        gap: 12px;
+    }
+
+    .dns-compare-card {
+        padding: 25px 18px;
+    }
+
+    .dns-cache-comparison,
+    .dns-ip-types-grid {
+        grid-template-columns: 1fr;
+    }
+
+    #dns-options {
+        grid-template-columns: 1fr;
+    }
+
+    #dns-options .quiz-option {
+        min-height: 65px;
+    }
+
+    .footer-content {
+        grid-template-columns: 1.5fr 1fr 1fr;
+        gap: 30px;
+    }
+
+}
+
+
+/* =====================================================
+   44. RESPONSIVE - SMARTPHONES
+   ===================================================== */
+
+@media (max-width: 600px) {
+
+    html {
+        scroll-padding-top: 75px;
+    }
+
+    .section {
+        padding: 70px 18px;
+    }
+
+    .section-heading {
+        margin-bottom: 40px;
+    }
+
+    .section-heading h2 {
+        font-size: 2rem;
+    }
+
+    .section-heading p {
+        font-size: 0.94rem;
+    }
+
+    .section-subheading {
+        margin-top: 65px;
+    }
+
+    .navbar {
+        padding: 0 18px;
+    }
+
+    .logo {
+        font-size: 1.23rem;
+    }
+
+    .hero {
+        padding-top: 125px;
+        padding-bottom: 75px;
+        gap: 55px;
+    }
+
+    .hero h1 {
+        font-size: clamp(2.5rem, 10vw, 3.6rem);
+    }
+
+    .hero-description {
+        font-size: 0.95rem;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .hero-buttons .btn {
+        width: 100%;
+    }
+
+    .hero-info {
+        gap: 14px;
+    }
+
+    .hero-info span {
+        font-size: 0.75rem;
+    }
+
+    .hero-orbit {
+        width: min(78vw, 290px);
+    }
+
+    .hero-orbit::before {
+        inset: 35px;
+    }
+
+    .hero-orbit::after {
+        inset: 70px;
+    }
+
+    .orbit-center {
+        width: 110px;
+        height: 110px;
+    }
+
+    .orbit-center i {
+        font-size: 3.5rem;
+    }
+
+    .orbit-icon {
+        width: 52px;
+        height: 52px;
+        font-size: 1.5rem;
+    }
+
+    .orbit-css {
+        right: -15px;
+    }
+
+    .orbit-lock {
+        left: -15px;
+    }
+
+    .intro-grid,
+    .topics-grid,
+    .http-grid,
+    .redirect-grid,
+    .domain-price-grid,
+    .standards-grid,
+    .browser-comparison,
+    .security-grid,
+    .security-advice-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .info-card,
+    .topic-card,
+    .content-card,
+    .standard-card {
+        padding: 25px;
+    }
+
+    .topic-card {
+        min-height: 270px;
+    }
+
+    .timeline-content {
+        padding: 23px;
+    }
+
+    .timeline-item,
+    .timeline-item:nth-child(even) {
+        padding-left: 38px;
+    }
+
+    .url-example {
+        padding: 14px;
+        font-size: 0.82rem;
+    }
+
+    .http-number {
+        font-size: 3rem;
+    }
+
+    .quiz-container {
+        padding: 25px 18px;
+        margin-top: 65px;
+    }
+
+    .quiz-header h3 {
+        font-size: 1.4rem;
+    }
+
+    .quiz-question {
+        font-size: 1rem;
+        padding: 20px;
+    }
+
+    .quiz-options,
+    #phishing-options {
+        grid-template-columns: 1fr;
+    }
+
+    .domain-cycle {
+        flex-direction: column;
+    }
+
+    .cycle-step {
+        width: 100%;
+        max-width: none;
+        flex: auto;
+    }
+
+    /* NOUVEAU DNS SUR TELEPHONE */
+
+    .dns-container {
+        padding: 35px 17px;
+        margin-top: 70px;
+        border-radius: 20px;
+    }
+
+    .dns-container > .section-subheading h3 {
+        font-size: 1.8rem;
+    }
+
+    .dns-comparison {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .dns-compare-arrow {
+        transform: rotate(90deg);
+        min-height: 35px;
+    }
+
+    .dns-compare-card {
+        min-height: 230px;
+        padding: 25px;
+    }
+
+    .dns-laboratory {
+        padding: 30px 16px;
+        margin-top: 70px;
+        border-radius: 18px;
+    }
+
+    .dns-search-row {
+        flex-direction: column;
+    }
+
+    .dns-search-row .btn {
+        width: 100%;
+    }
+
+    .dns-mode-selector {
+        flex-direction: column;
+    }
+
+    .dns-mode-option {
+        max-width: none;
+        width: 100%;
+        flex: auto;
+    }
+
+    .dns-steps-grid {
+        grid-template-columns: 1fr;
+        gap: 13px;
+    }
+
+    .dns-step {
+        min-height: 155px;
+        padding: 23px 15px;
+    }
+
+    .dns-detail-panel {
+        min-height: auto;
+        padding: 24px 19px;
+    }
+
+    .dns-detail-header h4 {
+        font-size: 1.2rem;
+    }
+
+    .dns-controls {
+        flex-direction: column;
+    }
+
+    .dns-controls .btn {
+        width: 100%;
+    }
+
+    .dns-cache-section,
+    .dns-my-ip-section,
+    .dns-ip-types {
+        margin-top: 75px;
+    }
+
+    .dns-my-ip-card {
+        padding: 35px 18px;
+    }
+
+    .dns-my-ip-card .btn {
+        width: 100%;
+    }
+
+    .dns-privacy-notice {
+        flex-direction: column;
+        gap: 13px;
+        padding: 20px;
+    }
+
+    #dns-quiz {
+        margin-top: 75px;
+    }
+
+    .browser-content {
+        padding: 27px;
+    }
+
+    .flip-card {
+        height: 270px;
+    }
+
+    .email-header,
+    .email-body {
+        padding: 18px;
+    }
+
+    .footer {
+        padding: 50px 22px 25px;
+    }
+
+    .footer-content {
+        grid-template-columns: 1fr 1fr;
+        gap: 35px;
+    }
+
+    .footer-brand {
+        grid-column: 1 / -1;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+        text-align: center;
+        gap: 10px;
+    }
+
+    .back-to-top {
+        bottom: 18px;
+        right: 18px;
+        width: 45px;
+        height: 45px;
+    }
+
+}
+
+
+/* =====================================================
+   45. ACCESSIBILITE
+   ===================================================== */
+
+/*
+   Respecte les utilisateurs qui ont demandé
+   à réduire les animations dans leur système.
+*/
+
+@media (prefers-reduced-motion: reduce) {
+
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+
+    .reveal {
+        opacity: 1;
+        transform: none;
+    }
+
+}
+
+
+/* =====================================================
+   FIN DU FICHIER STYLE.CSS
+   ===================================================== */

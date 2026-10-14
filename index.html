@@ -1,0 +1,2810 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+          content="Explore l'histoire du Web, les URL, le DNS, les standards et la cybersécurité avec WebExplorer.">
+
+    <title>WebExplorer | Comprendre le Web</title>
+
+    <!-- Feuille de style principale -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Police d'écriture -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+          rel="stylesheet">
+
+    <!-- Bibliothèque d'icônes -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <!-- JavaScript -->
+    <script src="script.js" defer></script>
+
+</head>
+
+<body>
+
+    <!-- ===================================== -->
+    <!-- NAVIGATION                            -->
+    <!-- ===================================== -->
+
+    <header class="header">
+
+        <nav class="navbar" aria-label="Navigation principale">
+
+            <a href="#accueil" class="logo">
+                <i class="fa-solid fa-globe"></i>
+                <span>Web<span class="accent">Explorer</span></span>
+            </a>
+
+            <button class="menu-toggle"
+                    id="menu-toggle"
+                    type="button"
+                    aria-label="Ouvrir le menu"
+                    aria-controls="nav-links"
+                    aria-expanded="false">
+
+                <i class="fa-solid fa-bars"></i>
+
+            </button>
+
+            <ul class="nav-links" id="nav-links">
+
+                <li><a href="#accueil" class="active">Accueil</a></li>
+                <li><a href="#timeline">Histoire</a></li>
+                <li><a href="#url">URL</a></li>
+                <li><a href="#domaines">Domaines</a></li>
+                <li><a href="#standards">Standards</a></li>
+                <li><a href="#securite">Sécurité</a></li>
+                <li><a href="#sources">Sources</a></li>
+
+            </ul>
+
+        </nav>
+
+    </header>
+
+
+    <main>
+
+        <!-- ===================================== -->
+        <!-- SECTION 1 : ACCUEIL                   -->
+        <!-- ===================================== -->
+
+        <section id="accueil" class="section hero">
+
+            <div class="hero-content">
+
+                <h1>
+                    Explore les secrets
+                    <span class="gradient-text">du Web</span>
+                </h1>
+
+                <p class="hero-description">
+                    Comment fonctionne Internet ?
+                    D'où vient le Web ?
+                    Comment naviguer en sécurité ?
+
+                    Découvre les technologies qui façonnent
+                    notre monde numérique grâce à des
+                    explications simples et des activités
+                    interactives.
+                </p>
+
+                <div class="hero-buttons">
+
+                    <a href="#explorer" class="btn btn-primary">
+                        Commencer l'exploration
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+
+                    <a href="#timeline" class="btn btn-secondary">
+                        Découvrir l'histoire
+                    </a>
+
+                </div>
+
+                <div class="hero-info">
+
+                    <span>
+                        <i class="fa-solid fa-book-open"></i>
+                        6 sujets
+                    </span>
+
+                    <span>
+                        <i class="fa-solid fa-gamepad"></i>
+                        Quiz interactifs
+                    </span>
+
+                    <span>
+                        <i class="fa-solid fa-lightbulb"></i>
+                        Accessible aux débutants
+                    </span>
+
+                </div>
+
+            </div>
+
+            <div class="hero-visual" aria-hidden="true">
+
+                <div class="hero-orbit">
+
+                    <div class="orbit-center">
+                        <i class="fa-solid fa-globe"></i>
+                    </div>
+
+                    <div class="orbit-icon orbit-html">
+                        <i class="fa-brands fa-html5"></i>
+                    </div>
+
+                    <div class="orbit-icon orbit-css">
+                        <i class="fa-brands fa-css3-alt"></i>
+                    </div>
+
+                    <div class="orbit-icon orbit-js">
+                        <i class="fa-brands fa-js"></i>
+                    </div>
+
+                    <div class="orbit-icon orbit-lock">
+                        <i class="fa-solid fa-shield-halved"></i>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ===================================== -->
+        <!-- PRESENTATION DU SITE                  -->
+        <!-- ===================================== -->
+
+        <section class="section introduction">
+
+            <div class="section-heading">
+
+                <span class="section-tag">Bienvenue</span>
+
+                <h2>Pourquoi ce site existe-t-il ?</h2>
+
+                <p>
+                    Un projet éducatif pour comprendre
+                    les coulisses du Web.
+                </p>
+
+            </div>
+
+            <div class="intro-grid">
+
+                <article class="info-card">
+
+                    <i class="fa-solid fa-circle-question"></i>
+
+                    <h3>Qu'est-ce que c'est ?</h3>
+
+                    <p>
+                        Un site pédagogique présentant
+                        les concepts fondamentaux du Web.
+                    </p>
+
+                </article>
+
+                <article class="info-card">
+
+                    <i class="fa-solid fa-users"></i>
+
+                    <h3>Pour qui ?</h3>
+
+                    <p>
+                        Pour les étudiants, les curieux
+                        et toutes les personnes qui veulent
+                        mieux comprendre Internet.
+                    </p>
+
+                </article>
+
+                <article class="info-card">
+
+                    <i class="fa-solid fa-code"></i>
+
+                    <h3>Par qui ?</h3>
+
+                    <p>
+                        Un projet réalisé dans le cadre
+                        d'un examen,
+                        à l'aide de HTML, CSS et JavaScript.
+                    </p>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <!-- ===================================== -->
+        <!-- CARTES DE NAVIGATION                  -->
+        <!-- ===================================== -->
+
+        <section id="explorer" class="section explorer">
+
+            <div class="section-heading">
+
+                <span class="section-tag">Exploration</span>
+
+                <h2>Que veux-tu découvrir ?</h2>
+
+                <p>
+                    Choisis un sujet et commence ton aventure
+                    dans l'univers du Web.
+                </p>
+
+            </div>
+
+            <div class="topics-grid">
+
+                <a href="#timeline" class="topic-card">
+
+                    <div class="topic-icon purple">
+                        <i class="fa-solid fa-clock-rotate-left"></i>
+                    </div>
+
+                    <h3>L'histoire du Web</h3>
+
+                    <p>
+                        Voyage dans le temps et découvre
+                        les inventions qui ont transformé Internet.
+                    </p>
+
+                    <span class="topic-link">
+                        Explorer
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </span>
+
+                </a>
+
+                <a href="#url" class="topic-card">
+
+                    <div class="topic-icon blue">
+                        <i class="fa-solid fa-link"></i>
+                    </div>
+
+                    <h3>Les URL</h3>
+
+                    <p>
+                        Apprends à décrypter les adresses
+                        des sites et les réponses des serveurs.
+                    </p>
+
+                    <span class="topic-link">
+                        Explorer
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </span>
+
+                </a>
+
+                <a href="#domaines" class="topic-card">
+
+                    <div class="topic-icon cyan">
+                        <i class="fa-solid fa-globe"></i>
+                    </div>
+
+                    <h3>Les noms de domaine</h3>
+
+                    <p>
+                        Comprends comment les sites obtiennent
+                        leur nom et comment fonctionne le DNS.
+                    </p>
+
+                    <span class="topic-link">
+                        Explorer
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </span>
+
+                </a>
+
+                <a href="#standards" class="topic-card">
+
+                    <div class="topic-icon orange">
+                        <i class="fa-solid fa-code"></i>
+                    </div>
+
+                    <h3>Les standards</h3>
+
+                    <p>
+                        Découvre les règles qui permettent
+                        aux navigateurs de comprendre
+                        les sites Internet.
+                    </p>
+
+                    <span class="topic-link">
+                        Explorer
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </span>
+
+                </a>
+
+                <a href="#securite" class="topic-card">
+
+                    <div class="topic-icon red">
+                        <i class="fa-solid fa-shield-halved"></i>
+                    </div>
+
+                    <h3>La cybersécurité</h3>
+
+                    <p>
+                        Apprends à reconnaître les menaces
+                        et à protéger tes informations.
+                    </p>
+
+                    <span class="topic-link">
+                        Explorer
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </span>
+
+                </a>
+
+                <a href="#sources" class="topic-card">
+
+                    <div class="topic-icon green">
+                        <i class="fa-solid fa-book"></i>
+                    </div>
+
+                    <h3>Sources et auteurs</h3>
+
+                    <p>
+                        Consulte les ressources qui ont
+                        permis de réaliser ce projet.
+                    </p>
+
+                    <span class="topic-link">
+                        Explorer
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </span>
+
+                </a>
+
+            </div>
+
+        </section>
+
+
+        <!-- ===================================== -->
+        <!-- SECTION 2 : HISTOIRE DU WEB           -->
+        <!-- ===================================== -->
+
+        <section id="timeline" class="section timeline-section">
+
+            <div class="section-heading">
+
+                <span class="section-tag">Histoire</span>
+
+                <h2>La grande histoire du Web</h2>
+
+                <p>
+                    Remonte le temps pour découvrir
+                    les événements qui ont marqué
+                    l'évolution du World Wide Web.
+                </p>
+
+            </div>
+
+            <div class="timeline-container" id="timeline-container">
+
+                <article class="timeline-item">
+
+                    <div class="timeline-date">1989</div>
+
+                    <div class="timeline-content">
+
+                        <div class="timeline-icon">
+                            <i class="fa-solid fa-lightbulb"></i>
+                        </div>
+
+                        <h3>Naissance de l'idée du Web</h3>
+
+                        <p>
+                            Tim Berners-Lee propose au CERN
+                            un système permettant de relier
+                            et partager des documents
+                            grâce à des liens hypertextes.
+                        </p>
+
+                    </div>
+
+                </article>
+
+                <article class="timeline-item">
+
+                    <div class="timeline-date">1991</div>
+
+                    <div class="timeline-content">
+
+                        <div class="timeline-icon">
+                            <i class="fa-solid fa-desktop"></i>
+                        </div>
+
+                        <h3>Le Web devient accessible</h3>
+
+                        <p>
+                            Le projet World Wide Web est rendu
+                            public sur Internet, ouvrant
+                            progressivement l'accès aux
+                            premières pages Web.
+                        </p>
+
+                    </div>
+
+                </article>
+
+                <article class="timeline-item">
+
+                    <div class="timeline-date">1993</div>
+
+                    <div class="timeline-content">
+
+                        <div class="timeline-icon">
+                            <i class="fa-solid fa-window-maximize"></i>
+                        </div>
+
+                        <h3>Le navigateur Mosaic</h3>
+
+                        <p>
+                            Mosaic popularise une navigation
+                            graphique avec des images intégrées
+                            dans les pages, rendant le Web
+                            plus accessible.
+                        </p>
+
+                    </div>
+
+                </article>
+
+                <article class="timeline-item">
+
+                    <div class="timeline-date">1994</div>
+
+                    <div class="timeline-content">
+
+                        <div class="timeline-icon">
+                            <i class="fa-solid fa-sitemap"></i>
+                        </div>
+
+                        <h3>Création du W3C</h3>
+
+                        <p>
+                            Le World Wide Web Consortium est
+                            fondé pour favoriser des standards
+                            Web ouverts et compatibles.
+                        </p>
+
+                    </div>
+
+                </article>
+
+                <article class="timeline-item">
+
+                    <div class="timeline-date">1995</div>
+
+                    <div class="timeline-content">
+
+                        <div class="timeline-icon">
+                            <i class="fa-brands fa-js"></i>
+                        </div>
+
+                        <h3>JavaScript arrive</h3>
+
+                        <p>
+                            JavaScript permet d'introduire
+                            des comportements interactifs
+                            directement dans les navigateurs.
+                        </p>
+
+                    </div>
+
+                </article>
+
+                <article class="timeline-item">
+
+                    <div class="timeline-date">1996</div>
+
+                    <div class="timeline-content">
+
+                        <div class="timeline-icon">
+                            <i class="fa-brands fa-css3-alt"></i>
+                        </div>
+
+                        <h3>CSS devient un standard</h3>
+
+                        <p>
+                            CSS1 permet de séparer
+                            la présentation visuelle
+                            du contenu HTML.
+                        </p>
+
+                    </div>
+
+                </article>
+
+                <article class="timeline-item">
+
+                    <div class="timeline-date">1998</div>
+
+                    <div class="timeline-content">
+
+                        <div class="timeline-icon">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                        </div>
+
+                        <h3>Création de Google</h3>
+
+                        <p>
+                            Google développe un moteur
+                            de recherche qui transforme
+                            progressivement la manière
+                            de trouver des informations.
+                        </p>
+
+                    </div>
+
+                </article>
+
+                <article class="timeline-item">
+
+                    <div class="timeline-date">2004</div>
+
+                    <div class="timeline-content">
+
+                        <div class="timeline-icon">
+                            <i class="fa-solid fa-users"></i>
+                        </div>
+
+                        <h3>Essor des réseaux sociaux</h3>
+
+                        <p>
+                            Le lancement de Facebook marque
+                            une étape importante dans
+                            le développement des plateformes
+                            sociales en ligne.
+                        </p>
+
+                    </div>
+
+                </article>
+
+                <article class="timeline-item">
+
+                    <div class="timeline-date">2005</div>
+
+                    <div class="timeline-content">
+
+                        <div class="timeline-icon">
+                            <i class="fa-solid fa-play"></i>
+                        </div>
+
+                        <h3>Naissance de YouTube</h3>
+
+                        <p>
+                            La plateforme facilite la
+                            publication et le partage
+                            de vidéos sur le Web.
+                        </p>
+
+                    </div>
+
+                </article>
+
+                <article class="timeline-item">
+
+                    <div class="timeline-date">2014</div>
+
+                    <div class="timeline-content">
+
+                        <div class="timeline-icon">
+                            <i class="fa-brands fa-html5"></i>
+                        </div>
+
+                        <h3>HTML5 : une recommandation W3C</h3>
+
+                        <p>
+                            HTML5 devient une recommandation
+                            du W3C, consolidant de nouvelles
+                            fonctionnalités pour les pages
+                            et applications Web.
+                        </p>
+
+                    </div>
+
+                </article>
+
+                <article class="timeline-item">
+
+                    <div class="timeline-date">2020</div>
+
+                    <div class="timeline-content">
+
+                        <div class="timeline-icon">
+                            <i class="fa-solid fa-video"></i>
+                        </div>
+
+                        <h3>Accélération des usages numériques</h3>
+
+                        <p>
+                            La pandémie de COVID-19 accélère
+                            l'utilisation des outils Web
+                            pour le travail, l'enseignement
+                            et les réunions à distance.
+                        </p>
+
+                    </div>
+
+                </article>
+
+                <article class="timeline-item">
+
+                    <div class="timeline-date">2022</div>
+
+                    <div class="timeline-content">
+
+                        <div class="timeline-icon">
+                            <i class="fa-solid fa-robot"></i>
+                        </div>
+
+                        <h3>Popularisation de l'IA générative</h3>
+
+                        <p>
+                            Le lancement public de ChatGPT
+                            contribue à populariser
+                            l'intelligence artificielle
+                            générative auprès du grand public.
+                        </p>
+
+                    </div>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <!-- ===================================== -->
+        <!-- SECTION 3 : LES URL                   -->
+        <!-- ===================================== -->
+
+        <section id="url" class="section url-section">
+
+            <div class="section-heading">
+
+                <span class="section-tag">Fonctionnement</span>
+
+                <h2>Comment fonctionne une URL ?</h2>
+
+                <p>
+                    Chaque adresse Web contient
+                    des informations qui permettent
+                    de retrouver une ressource.
+                </p>
+
+            </div>
+
+            <div class="content-card">
+
+                <h3>
+                    <i class="fa-solid fa-link"></i>
+                    Décortiquons une adresse
+                </h3>
+
+                <p>
+                    Clique sur chaque partie de cette URL
+                    pour découvrir son rôle.
+                </p>
+
+                <div class="url-example" id="url-example">
+
+                    <button type="button"
+                            class="url-part protocol"
+                            data-url-part="protocol">
+                        https://
+                    </button>
+
+                    <button type="button"
+                            class="url-part domain"
+                            data-url-part="domain">
+                        www.example.com
+                    </button>
+
+                    <button type="button"
+                            class="url-part path"
+                            data-url-part="path">
+                        /articles
+                    </button>
+
+                    <button type="button"
+                            class="url-part parameters"
+                            data-url-part="parameters">
+                        ?page=2
+                    </button>
+
+                </div>
+
+                <div class="url-explanation"
+                     id="url-explanation"
+                     aria-live="polite">
+
+                    <h4>Sélectionne un élément</h4>
+
+                    <p>
+                        Une explication apparaîtra ici
+                        lorsque tu cliqueras sur une
+                        partie de l'adresse.
+                    </p>
+
+                </div>
+
+                <p class="small-note">
+                    Adresse fictive utilisée pour
+                    expliquer la structure d'une URL.
+                </p>
+
+            </div>
+
+
+            <!-- CODES HTTP -->
+
+            <div class="section-subheading">
+
+                <h3>Les codes de réponse HTTP</h3>
+
+                <p>
+                    Lorsqu'un navigateur demande une ressource,
+                    le serveur renvoie un code de statut.
+                </p>
+
+            </div>
+
+            <div class="http-grid">
+
+                <article class="http-card success">
+
+                    <span class="http-number">200</span>
+
+                    <h4>OK</h4>
+
+                    <p>
+                        La requête a réussi.
+                        Le serveur a traité correctement
+                        la demande.
+                    </p>
+
+                </article>
+
+                <article class="http-card warning">
+
+                    <span class="http-number">404</span>
+
+                    <h4>Not Found</h4>
+
+                    <p>
+                        Le serveur ne trouve pas
+                        la ressource demandée.
+                    </p>
+
+                </article>
+
+                <article class="http-card danger">
+
+                    <span class="http-number">500</span>
+
+                    <h4>Internal Server Error</h4>
+
+                    <p>
+                        Une erreur interne empêche
+                        le serveur de traiter la requête.
+                    </p>
+
+                </article>
+
+            </div>
+
+
+            <!-- REDIRECTIONS -->
+
+            <div class="section-subheading">
+                <h3>Les redirections</h3>
+            </div>
+
+            <div class="redirect-grid">
+
+                <article class="content-card">
+
+                    <h4>301 — Redirection permanente</h4>
+
+                    <p>
+                        Une ressource a été déplacée
+                        de manière permanente vers
+                        une nouvelle adresse.
+                    </p>
+
+                    <div class="redirect-example">
+                        <span>Ancienne URL</span>
+                        <i class="fa-solid fa-arrow-right"></i>
+                        <span>Nouvelle URL</span>
+                    </div>
+
+                </article>
+
+                <article class="content-card">
+
+                    <h4>302 — Redirection temporaire</h4>
+
+                    <p>
+                        Une ressource est accessible
+                        temporairement à une autre adresse.
+                        Son déplacement n'est pas considéré
+                        comme permanent.
+                    </p>
+
+                    <div class="redirect-example">
+                        <span>URL initiale</span>
+                        <i class="fa-solid fa-arrow-right"></i>
+                        <span>URL temporaire</span>
+                    </div>
+
+                </article>
+
+            </div>
+
+
+            <!-- QUIZ HTTP -->
+
+            <div class="quiz-container" id="http-quiz">
+
+                <div class="quiz-header">
+
+                    <span class="section-tag">
+                        <i class="fa-solid fa-gamepad"></i>
+                        Mini-jeu
+                    </span>
+
+                    <h3>Devine le code HTTP !</h3>
+
+                    <p>
+                        Lis la situation et trouve
+                        le code correspondant.
+                    </p>
+
+                </div>
+
+                <div class="quiz-progress">
+
+                    <span id="http-question-number">
+                        Question 1
+                    </span>
+
+                    <span id="http-score">Score : 0</span>
+
+                </div>
+
+                <div class="quiz-question" id="http-question">
+                    Une page demandée est introuvable.
+                    Quel code est renvoyé ?
+                </div>
+
+                <div class="quiz-options" id="http-options">
+
+                    <button type="button"
+                            class="quiz-option"
+                            data-code="200">
+                        200
+                    </button>
+
+                    <button type="button"
+                            class="quiz-option"
+                            data-code="404">
+                        404
+                    </button>
+
+                    <button type="button"
+                            class="quiz-option"
+                            data-code="500">
+                        500
+                    </button>
+
+                </div>
+
+                <p id="http-feedback"
+                   class="quiz-feedback"
+                   aria-live="polite"></p>
+
+                <button type="button"
+                        class="btn btn-primary"
+                        id="http-next"
+                        hidden>
+
+                    Question suivante
+                    <i class="fa-solid fa-arrow-right"></i>
+
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- ===================================== -->
+        <!-- SECTION 4 : LES NOMS DE DOMAINE       -->
+        <!-- ===================================== -->
+
+        <section id="domaines" class="section domains-section">
+
+            <div class="section-heading">
+
+                <span class="section-tag">Identification</span>
+
+                <h2>Les noms de domaine</h2>
+
+                <p>
+                    Comment un site obtient-il son adresse ?
+                    Et comment ton navigateur le retrouve-t-il ?
+                </p>
+
+            </div>
+
+
+            <!-- DEFINITION DU NOM DE DOMAINE -->
+
+            <div class="content-card">
+
+                <h3>Qu'est-ce qu'un nom de domaine ?</h3>
+
+                <p>
+                    Un nom de domaine est un nom lisible
+                    par les humains, comme example.com,
+                    qui permet d'identifier une adresse
+                    sur Internet sans devoir mémoriser
+                    une adresse IP.
+                </p>
+
+                <p>
+                    Les noms de domaine sont généralement
+                    enregistrés auprès de bureaux
+                    d'enregistrement appelés registrars.
+                    Un enregistrement est accordé pour
+                    une durée déterminée et doit être renouvelé.
+                </p>
+
+            </div>
+
+
+            <!-- CYCLE DE VIE -->
+
+            <div class="section-subheading">
+
+                <h3>Le cycle de vie d'un domaine</h3>
+
+                <p>
+                    Découvre les grandes étapes
+                    de la vie d'un nom de domaine.
+                </p>
+
+            </div>
+
+            <div class="domain-cycle">
+
+                <div class="cycle-step">
+
+                    <div class="cycle-icon">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </div>
+
+                    <h4>1. Disponible</h4>
+                    <p>Le nom peut être enregistré.</p>
+
+                </div>
+
+                <div class="cycle-arrow">
+                    <i class="fa-solid fa-arrow-right"></i>
+                </div>
+
+                <div class="cycle-step">
+
+                    <div class="cycle-icon">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                    </div>
+
+                    <h4>2. Enregistré</h4>
+                    <p>Un titulaire réserve le domaine.</p>
+
+                </div>
+
+                <div class="cycle-arrow">
+                    <i class="fa-solid fa-arrow-right"></i>
+                </div>
+
+                <div class="cycle-step">
+
+                    <div class="cycle-icon">
+                        <i class="fa-solid fa-circle-check"></i>
+                    </div>
+
+                    <h4>3. Actif</h4>
+                    <p>Le domaine peut être configuré et utilisé.</p>
+
+                </div>
+
+                <div class="cycle-arrow">
+                    <i class="fa-solid fa-arrow-right"></i>
+                </div>
+
+                <div class="cycle-step">
+
+                    <div class="cycle-icon">
+                        <i class="fa-solid fa-calendar-xmark"></i>
+                    </div>
+
+                    <h4>4. Expiré</h4>
+
+                    <p>
+                        Sans renouvellement, il entre
+                        dans une procédure d'expiration.
+                    </p>
+
+                </div>
+
+            </div>
+
+            <p class="small-note">
+                Les délais de grâce, de récupération
+                et de suppression varient selon
+                les extensions et les registres.
+            </p>
+
+
+            <!-- TARIFS DES DOMAINES -->
+
+            <div class="section-subheading">
+
+                <h3>Combien coûte un nom de domaine ?</h3>
+
+                <p>
+                    Les tarifs dépendent de l'extension,
+                    du bureau d'enregistrement
+                    et de la durée choisie.
+                </p>
+
+                <p>
+                    Voici un comparatif de trois extensions
+                    chez OVHcloud, avec le prix de la
+                    première année et du renouvellement.
+                </p>
+
+            </div>
+
+            <div class="domain-price-grid">
+
+                <article class="price-card">
+
+                    <span class="domain-extension">.be</span>
+
+                    <h4>Belgique</h4>
+
+                    <p>
+                        Extension nationale belge,
+                        idéale pour un site destiné
+                        au public belge.
+                    </p>
+
+                    <span class="price-label">
+                        6,99 € HT / 1re année
+                    </span>
+
+                    <p>
+                        <strong>Renouvellement :</strong>
+                        7,89 € HT / an
+                    </p>
+
+                    <p class="small-note">
+                        Fournisseur : OVHcloud
+                    </p>
+
+                </article>
+
+                <article class="price-card featured">
+
+                    <span class="domain-extension">.com</span>
+
+                    <h4>International</h4>
+
+                    <p>
+                        Extension générique très utilisée
+                        dans le monde entier,
+                        notamment par les entreprises.
+                    </p>
+
+                    <span class="price-label">
+                        7,99 € HT / 1re année
+                    </span>
+
+                    <p>
+                        <strong>Renouvellement :</strong>
+                        13,49 € HT / an
+                    </p>
+
+                    <p class="small-note">
+                        Fournisseur : OVHcloud
+                    </p>
+
+                </article>
+
+                <article class="price-card">
+
+                    <span class="domain-extension">.org</span>
+
+                    <h4>Organisations</h4>
+
+                    <p>
+                        Extension générique souvent
+                        utilisée par les associations
+                        et les organisations.
+                    </p>
+
+                    <span class="price-label">
+                        7,99 € HT / 1re année
+                    </span>
+
+                    <p>
+                        <strong>Renouvellement :</strong>
+                        12,99 € HT / an
+                    </p>
+
+                    <p class="small-note">
+                        Fournisseur : OVHcloud
+                    </p>
+
+                </article>
+
+            </div>
+
+            <p class="small-note">
+                Prix hors taxes relevés sur OVHcloud France
+                le 9 octobre 2026, pour une durée d'un an.
+                Les tarifs peuvent évoluer.
+            </p>
+
+            <p class="small-note">
+                Sources des prix :
+
+                <a href="https://www.ovhcloud.com/fr/domains/tld/be/"
+                   target="_blank"
+                   rel="noopener noreferrer">.be</a>
+
+                |
+
+                <a href="https://www.ovhcloud.com/fr/domains/tld/com/"
+                   target="_blank"
+                   rel="noopener noreferrer">.com</a>
+
+                |
+
+                <a href="https://www.ovhcloud.com/fr/domains/tld/org/"
+                   target="_blank"
+                   rel="noopener noreferrer">.org</a>
+            </p>
+
+
+            <!-- ===================================== -->
+            <!-- NOUVELLE PARTIE : COMPRENDRE LE DNS   -->
+            <!-- ===================================== -->
+
+            <div class="dns-container" id="dns-pedagogie">
+
+                <div class="section-subheading">
+
+                    <span class="section-tag">
+                        <i class="fa-solid fa-network-wired"></i>
+                        Le DNS expliqué
+                    </span>
+
+                    <h3>Comment fonctionne le DNS ?</h3>
+
+                    <p>
+                        Quand tu écris une adresse dans
+                        ton navigateur, comment ton ordinateur
+                        sait-il où trouver le bon site ?
+                    </p>
+
+                    <p>
+                        Pour comprendre, nous allons suivre
+                        le chemin parcouru par une demande DNS.
+                    </p>
+
+                </div>
+
+
+                <!-- POURQUOI UTILISER LE DNS ? -->
+
+                <div class="dns-introduction">
+
+                    <article class="content-card">
+
+                        <h3>
+                            <i class="fa-solid fa-circle-question"></i>
+                            Pourquoi avons-nous besoin du DNS ?
+                        </h3>
+
+                        <p>
+                            Les appareils utilisent des
+                            adresses IP pour communiquer
+                            sur un réseau.
+                        </p>
+
+                        <p>
+                            Mais retenir une adresse IP
+                            pour chaque site Internet
+                            serait difficile.
+                        </p>
+
+                        <p>
+                            Le DNS, ou Domain Name System,
+                            est un système distribué
+                            qui permet notamment de retrouver
+                            les adresses IP associées
+                            aux noms de domaine.
+                        </p>
+
+                        <p>
+                            Il joue un rôle comparable
+                            à un annuaire téléphonique :
+                            tu connais le nom d'un contact,
+                            et l'annuaire t'aide
+                            à trouver son numéro.
+                        </p>
+
+                    </article>
+
+                </div>
+
+
+                <!-- COMPARAISON DOMAINE / IP -->
+
+                <div class="section-subheading">
+
+                    <h3>Nom de domaine ou adresse IP ?</h3>
+
+                    <p>
+                        Deux éléments différents qui
+                        travaillent ensemble.
+                    </p>
+
+                </div>
+
+                <div class="dns-comparison">
+
+                    <article class="dns-compare-card">
+
+                        <div class="dns-compare-icon">
+                            <i class="fa-solid fa-book-open"></i>
+                        </div>
+
+                        <h4>Nom de domaine</h4>
+
+                        <strong>example.com</strong>
+
+                        <p>
+                            Un nom facile à lire et
+                            à mémoriser pour les humains.
+                        </p>
+
+                    </article>
+
+
+                    <div class="dns-compare-arrow"
+                         aria-hidden="true">
+
+                        <i class="fa-solid fa-arrow-right-arrow-left"></i>
+
+                    </div>
+
+
+                    <article class="dns-compare-card">
+
+                        <div class="dns-compare-icon">
+                            <i class="fa-solid fa-server"></i>
+                        </div>
+
+                        <h4>Adresse IP</h4>
+
+                        <strong>192.0.2.1</strong>
+
+                        <p>
+                            Une adresse numérique permettant
+                            d'identifier une interface
+                            réseau pour acheminer
+                            des communications.
+                        </p>
+
+                    </article>
+
+                </div>
+
+                <p class="small-note">
+                    192.0.2.1 est une adresse réservée
+                    aux exemples et à la documentation.
+                    Elle ne représente pas l'adresse
+                    réelle de example.com.
+                </p>
+
+
+                <!-- ===================================== -->
+                <!-- LABORATOIRE DE RESOLUTION DNS         -->
+                <!-- ===================================== -->
+
+                <div class="dns-laboratory">
+
+                    <div class="section-subheading">
+
+                        <span class="section-tag">
+                            <i class="fa-solid fa-flask"></i>
+                            Laboratoire interactif
+                        </span>
+
+                        <h3>Simule une résolution DNS</h3>
+
+                        <p>
+                            Choisis un domaine et découvre
+                            les étapes nécessaires pour
+                            rechercher son adresse IP.
+                        </p>
+
+                    </div>
+
+
+                    <!-- SAISIE DU DOMAINE -->
+
+                    <form class="dns-search-form"
+                          id="dns-search-form">
+
+                        <label for="dns-domain-input">
+                            Nom de domaine à explorer
+                        </label>
+
+                        <div class="dns-search-row">
+
+                            <input type="text"
+                                   id="dns-domain-input"
+                                   name="domain"
+                                   value="example.com"
+                                   placeholder="exemple : example.com"
+                                   autocomplete="off"
+                                   spellcheck="false"
+                                   required
+                                   maxlength="253">
+
+                            <button type="submit"
+                                    class="btn btn-secondary"
+                                    id="dns-domain-validate">
+
+                                <i class="fa-solid fa-magnifying-glass"></i>
+                                Choisir ce domaine
+
+                            </button>
+
+                        </div>
+
+                    </form>
+
+                    <p class="small-note">
+                        La simulation décrit le parcours
+                        habituel d'une recherche DNS.
+                        Une recherche DNS réelle sera
+                        proposée séparément, lorsque
+                        le service externe sera configuré.
+                    </p>
+
+
+                    <!-- SELECTION DU MODE -->
+
+                    <fieldset class="dns-mode-selector">
+
+                        <legend>Mode de simulation</legend>
+
+                        <label class="dns-mode-option">
+
+                            <input type="radio"
+                                   name="dns-mode"
+                                   value="automatic"
+                                   checked>
+
+                            <span>
+                                <i class="fa-solid fa-play"></i>
+                                Automatique — 5 s par étape
+                            </span>
+
+                        </label>
+
+                        <label class="dns-mode-option">
+
+                            <input type="radio"
+                                   name="dns-mode"
+                                   value="manual">
+
+                            <span>
+                                <i class="fa-solid fa-hand-pointer"></i>
+                                Manuel — avancer à son rythme
+                            </span>
+
+                        </label>
+
+                    </fieldset>
+
+
+                    <!-- PROGRESSION DE LA SIMULATION -->
+
+                    <div class="dns-simulation-progress">
+
+                        <div class="dns-progress-header">
+
+                            <span id="dns-progress-label">
+                                Étape 1 sur 6
+                            </span>
+
+                            <span id="dns-progress-percent">
+                                0 %
+                            </span>
+
+                        </div>
+
+                        <div class="dns-progress-track"
+                             role="progressbar"
+                             aria-label="Progression de la simulation DNS"
+                             aria-valuemin="0"
+                             aria-valuemax="100"
+                             aria-valuenow="0"
+                             id="dns-progress-bar">
+
+                            <div class="dns-progress-fill"
+                                 id="dns-progress-fill"></div>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- SIX ETAPES VISUELLES -->
+
+                    <div class="dns-steps-grid"
+                         id="dns-animation">
+
+                        <div class="dns-step"
+                             data-dns-step="0">
+
+                            <i class="fa-solid fa-keyboard"></i>
+
+                            <h4>1. Le navigateur</h4>
+
+                            <p>L'utilisateur saisit une URL.</p>
+
+                        </div>
+
+                        <div class="dns-step"
+                             data-dns-step="1">
+
+                            <i class="fa-solid fa-database"></i>
+
+                            <h4>2. Le cache</h4>
+
+                            <p>Vérification d'une réponse mémorisée.</p>
+
+                        </div>
+
+                        <div class="dns-step"
+                             data-dns-step="2">
+
+                            <i class="fa-solid fa-server"></i>
+
+                            <h4>3. Le résolveur</h4>
+
+                            <p>Recherche de la réponse DNS.</p>
+
+                        </div>
+
+                        <div class="dns-step"
+                             data-dns-step="3">
+
+                            <i class="fa-solid fa-network-wired"></i>
+
+                            <h4>4. Les serveurs DNS</h4>
+
+                            <p>Consultation de la hiérarchie DNS.</p>
+
+                        </div>
+
+                        <div class="dns-step"
+                             data-dns-step="4">
+
+                            <i class="fa-solid fa-location-dot"></i>
+
+                            <h4>5. L'adresse IP</h4>
+
+                            <p>La réponse est renvoyée.</p>
+
+                        </div>
+
+                        <div class="dns-step"
+                             data-dns-step="5">
+
+                            <i class="fa-solid fa-globe"></i>
+
+                            <h4>6. La connexion</h4>
+
+                            <p>Le navigateur contacte le serveur.</p>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- EXPLICATION DETAILLEE -->
+
+                    <div class="dns-detail-panel"
+                         id="dns-detail-panel"
+                         aria-live="polite">
+
+                        <div class="dns-detail-header">
+
+                            <span class="dns-detail-number"
+                                  id="dns-detail-number">
+                                ÉTAPE 1
+                            </span>
+
+                            <h4 id="dns-detail-title">
+                                Le navigateur reçoit une adresse
+                            </h4>
+
+                        </div>
+
+                        <p id="dns-detail-description">
+                            Lorsque tu saisis une adresse Web,
+                            ton navigateur identifie le nom
+                            d'hôte qu'il doit contacter.
+                            Il peut ensuite avoir besoin
+                            de résoudre ce nom en adresse IP.
+                        </p>
+
+                        <p id="dns-detail-example">
+                            Exemple : tu souhaites visiter
+                            https://example.com.
+                        </p>
+
+                    </div>
+
+
+                    <!-- BOUTONS DE SIMULATION -->
+
+                    <div class="dns-controls">
+
+                        <button type="button"
+                                class="btn btn-primary"
+                                id="dns-start">
+
+                            <i class="fa-solid fa-play"></i>
+                            Lancer la simulation
+
+                        </button>
+
+                        <button type="button"
+                                class="btn btn-secondary"
+                                id="dns-previous"
+                                disabled>
+
+                            <i class="fa-solid fa-arrow-left"></i>
+                            Précédent
+
+                        </button>
+
+                        <button type="button"
+                                class="btn btn-secondary"
+                                id="dns-next"
+                                disabled>
+
+                            Suivant
+                            <i class="fa-solid fa-arrow-right"></i>
+
+                        </button>
+
+                        <button type="button"
+                                class="btn btn-secondary"
+                                id="dns-reset">
+
+                            <i class="fa-solid fa-rotate-right"></i>
+                            Réinitialiser
+
+                        </button>
+
+                    </div>
+
+                    <p id="dns-status"
+                       class="dns-status-message"
+                       role="status"
+                       aria-live="polite">
+
+                        Choisis un mode, puis lance
+                        la simulation.
+
+                    </p>
+
+                </div>
+
+
+                <!-- ===================================== -->
+                <!-- COMPRENDRE LE CACHE DNS              -->
+                <!-- ===================================== -->
+
+                <div class="dns-cache-section">
+
+                    <div class="section-subheading">
+
+                        <h3>
+                            <i class="fa-solid fa-database"></i>
+                            Pourquoi la deuxième visite
+                            peut-elle être plus rapide ?
+                        </h3>
+
+                        <p>
+                            Certains résultats DNS sont
+                            mémorisés temporairement
+                            dans un cache.
+                        </p>
+
+                    </div>
+
+                    <div class="dns-cache-comparison">
+
+                        <article class="content-card">
+
+                            <h4>
+                                <i class="fa-solid fa-hourglass-start"></i>
+                                Première recherche
+                            </h4>
+
+                            <p>
+                                Si aucune réponse valide
+                                n'est disponible en cache,
+                                le résolveur peut devoir
+                                interroger les serveurs DNS.
+                            </p>
+
+                            <div class="cache-path">
+                                Navigateur → Résolveur →
+                                Serveurs DNS → Réponse
+                            </div>
+
+                        </article>
+
+                        <article class="content-card">
+
+                            <h4>
+                                <i class="fa-solid fa-bolt"></i>
+                                Réponse en cache
+                            </h4>
+
+                            <p>
+                                Une adresse précédemment
+                                recherchée peut être conservée
+                                pendant une durée limitée
+                                appelée TTL.
+                            </p>
+
+                            <div class="cache-path">
+                                Navigateur → Cache →
+                                Réponse disponible
+                            </div>
+
+                        </article>
+
+                    </div>
+
+                    <p class="small-note">
+                        Le cache DNS peut accélérer la résolution
+                        d'un nom, mais ne garantit pas que
+                        le chargement complet du site
+                        sera plus rapide.
+                    </p>
+
+                </div>
+
+
+                <!-- ===================================== -->
+                <!-- IP PUBLIQUE DU VISITEUR               -->
+                <!-- ===================================== -->
+
+                <div class="dns-my-ip-section"
+                     id="dns-my-ip-section">
+
+                    <div class="section-subheading">
+
+                        <span class="section-tag">
+                            <i class="fa-solid fa-laptop"></i>
+                            Expérience personnelle
+                        </span>
+
+                        <h3>Quelle est ton adresse IP publique ?</h3>
+
+                        <p>
+                            Les serveurs sur Internet voient
+                            généralement l'adresse IP publique
+                            utilisée pour établir ta connexion.
+                        </p>
+
+                    </div>
+
+                    <div class="dns-my-ip-card">
+
+                        <div class="dns-my-ip-icon">
+                            <i class="fa-solid fa-globe"></i>
+                        </div>
+
+                        <p>Ton adresse IP publique</p>
+
+                        <strong id="my-public-ip">
+                            Non recherchée
+                        </strong>
+
+                        <p id="my-ip-status"
+                           role="status"
+                           aria-live="polite">
+                            Clique sur le bouton pour
+                            effectuer la recherche.
+                        </p>
+
+                        <button type="button"
+                                class="btn btn-primary"
+                                id="my-ip-button">
+
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                            Découvrir mon adresse IP
+
+                        </button>
+
+                    </div>
+
+                    <div class="dns-privacy-notice">
+
+                        <i class="fa-solid fa-shield-halved"></i>
+
+                        <p>
+                            La recherche est facultative.
+                            Lorsque tu cliques sur le bouton,
+                            une requête sera envoyée à un
+                            service externe pour connaître
+                            l'adresse IP publique visible
+                            de ce service.
+
+                            Une connexion Internet est
+                            nécessaire. Aucune recherche
+                            n'est lancée automatiquement.
+
+                            L'adresse affichée peut être celle
+                            de ta box, de ton VPN ou d'un proxy,
+                            et non une adresse propre à
+                            ton appareil.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <!-- ===================================== -->
+                <!-- DIFFERENCE IP PUBLIQUE ET PRIVEE      -->
+                <!-- ===================================== -->
+
+                <div class="dns-ip-types">
+
+                    <div class="section-subheading">
+
+                        <h3>Adresse IP publique ou privée ?</h3>
+
+                        <p>
+                            Ton ordinateur peut utiliser
+                            différentes adresses IP
+                            selon le réseau.
+                        </p>
+
+                    </div>
+
+                    <div class="dns-ip-types-grid">
+
+                        <article class="content-card">
+
+                            <h4>
+                                <i class="fa-solid fa-house-signal"></i>
+                                IP privée
+                            </h4>
+
+                            <p>
+                                Utilisée à l'intérieur
+                                d'un réseau local,
+                                par exemple à la maison.
+                            </p>
+
+                            <p>
+                                Exemple : 192.168.1.25
+                            </p>
+
+                            <p>
+                                Elle n'est normalement pas
+                                accessible directement depuis
+                                un simple site Web.
+                            </p>
+
+                        </article>
+
+                        <article class="content-card">
+
+                            <h4>
+                                <i class="fa-solid fa-earth-europe"></i>
+                                IP publique
+                            </h4>
+
+                            <p>
+                                Adresse visible par un service
+                                externe lors de la connexion.
+                            </p>
+
+                            <p>
+                                Plusieurs appareils peuvent
+                                partager une même adresse IP
+                                publique.
+                            </p>
+
+                            <p>
+                                Elle peut changer avec le temps
+                                ou lorsqu'un VPN est utilisé.
+                            </p>
+
+                        </article>
+
+                    </div>
+
+                </div>
+
+
+                <!-- ===================================== -->
+                <!-- MINI-QUIZ DNS                         -->
+                <!-- ===================================== -->
+
+                <div class="quiz-container"
+                     id="dns-quiz">
+
+                    <div class="quiz-header">
+
+                        <span class="section-tag">
+                            <i class="fa-solid fa-gamepad"></i>
+                            Teste tes connaissances
+                        </span>
+
+                        <h3>As-tu compris le DNS ?</h3>
+
+                        <p>
+                            Réponds à quelques questions
+                            pour vérifier tes connaissances.
+                        </p>
+
+                    </div>
+
+                    <div class="quiz-progress">
+
+                        <span id="dns-question-number">
+                            Question 1
+                        </span>
+
+                        <span id="dns-score">
+                            Score : 0
+                        </span>
+
+                    </div>
+
+                    <div class="quiz-question"
+                         id="dns-question">
+
+                        À quoi sert principalement
+                        le système DNS ?
+
+                    </div>
+
+                    <div class="quiz-options"
+                         id="dns-options">
+
+                        <button type="button"
+                                class="quiz-option">
+
+                            Retrouver des informations
+                            associées à un nom de domaine
+
+                        </button>
+
+                        <button type="button"
+                                class="quiz-option">
+
+                            Créer des mots de passe
+
+                        </button>
+
+                        <button type="button"
+                                class="quiz-option">
+
+                            Protéger un ordinateur
+                            contre tous les virus
+
+                        </button>
+
+                    </div>
+
+                    <p id="dns-feedback"
+                       class="quiz-feedback"
+                       aria-live="polite"></p>
+
+                    <button type="button"
+                            class="btn btn-primary"
+                            id="dns-quiz-next"
+                            hidden>
+
+                        Question suivante
+                        <i class="fa-solid fa-arrow-right"></i>
+
+                    </button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ===================================== -->
+        <!-- SECTION 5 : STANDARDS DU WEB          -->
+        <!-- ===================================== -->
+
+        <section id="standards" class="section standards-section">
+
+            <div class="section-heading">
+
+                <span class="section-tag">Compatibilité</span>
+
+                <h2>Les standards du Web</h2>
+
+                <p>
+                    Pourquoi une même page peut-elle
+                    fonctionner sur plusieurs navigateurs ?
+                    Grâce à des règles partagées !
+                </p>
+
+            </div>
+
+            <div class="standards-grid">
+
+                <article class="standard-card">
+
+                    <div class="standard-icon">
+                        <i class="fa-solid fa-globe"></i>
+                    </div>
+
+                    <h3>W3C</h3>
+
+                    <p>
+                        Le World Wide Web Consortium
+                        développe des standards et
+                        recommandations pour le Web,
+                        notamment en matière d'accessibilité
+                        et de technologies Web.
+                    </p>
+
+                    <a href="https://www.w3.org/"
+                       target="_blank"
+                       rel="noopener noreferrer">
+
+                        Site officiel
+                        <i class="fa-solid fa-arrow-up-right-from-square"></i>
+
+                    </a>
+
+                </article>
+
+                <article class="standard-card">
+
+                    <div class="standard-icon">
+                        <i class="fa-solid fa-code"></i>
+                    </div>
+
+                    <h3>WHATWG</h3>
+
+                    <p>
+                        Le WHATWG maintient notamment
+                        le HTML Living Standard,
+                        qui définit le fonctionnement
+                        moderne du HTML.
+                    </p>
+
+                    <a href="https://whatwg.org/"
+                       target="_blank"
+                       rel="noopener noreferrer">
+
+                        Site officiel
+                        <i class="fa-solid fa-arrow-up-right-from-square"></i>
+
+                    </a>
+
+                </article>
+
+                <article class="standard-card">
+
+                    <div class="standard-icon">
+                        <i class="fa-solid fa-network-wired"></i>
+                    </div>
+
+                    <h3>IETF</h3>
+
+                    <p>
+                        L'Internet Engineering Task Force
+                        élabore de nombreux standards
+                        et protocoles utilisés sur Internet,
+                        notamment autour de HTTP.
+                    </p>
+
+                    <a href="https://www.ietf.org/"
+                       target="_blank"
+                       rel="noopener noreferrer">
+
+                        Site officiel
+                        <i class="fa-solid fa-arrow-up-right-from-square"></i>
+
+                    </a>
+
+                </article>
+
+            </div>
+
+
+            <!-- COMPARAISON VISUELLE -->
+
+            <div class="section-subheading">
+
+                <h3>Imagine un Web sans standards...</h3>
+
+                <p>
+                    Voici une simulation pédagogique montrant
+                    pourquoi il est important que les
+                    navigateurs partagent des règles.
+                </p>
+
+            </div>
+
+            <div class="browser-comparison">
+
+                <div class="browser-demo browser-broken">
+
+                    <div class="browser-topbar">
+
+                        <span class="browser-dot"></span>
+                        <span class="browser-dot"></span>
+                        <span class="browser-dot"></span>
+
+                        <span>Sans standards communs</span>
+
+                    </div>
+
+                    <div class="browser-content">
+
+                        <h4>Mon super site</h4>
+
+                        <p>
+                            Les éléments risquent
+                            de s'afficher différemment.
+                        </p>
+
+                        <div class="demo-button">Bouton</div>
+
+                    </div>
+
+                </div>
+
+                <div class="browser-demo browser-correct">
+
+                    <div class="browser-topbar">
+
+                        <span class="browser-dot"></span>
+                        <span class="browser-dot"></span>
+                        <span class="browser-dot"></span>
+
+                        <span>Avec des standards communs</span>
+
+                    </div>
+
+                    <div class="browser-content">
+
+                        <h4>Mon super site</h4>
+
+                        <p>
+                            Les navigateurs disposent
+                            de règles cohérentes.
+                        </p>
+
+                        <div class="demo-button">Bouton</div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <p class="small-note">
+                Démonstration illustrative : les standards
+                améliorent l'interopérabilité, mais
+                n'éliminent pas toutes les différences
+                entre navigateurs.
+            </p>
+
+        </section>
+
+
+        <!-- ===================================== -->
+        <!-- SECTION 6 : CYBERSECURITE             -->
+        <!-- ===================================== -->
+
+        <section id="securite" class="section security-section">
+
+            <div class="section-heading">
+
+                <span class="section-tag">Protection</span>
+
+                <h2>Apprends à te protéger sur le Web</h2>
+
+                <p>
+                    Découvre les principales menaces
+                    numériques et les bonnes habitudes
+                    pour naviguer en sécurité.
+                </p>
+
+            </div>
+
+
+            <!-- CARTES RETOURNABLES -->
+
+            <div class="section-subheading">
+
+                <h3>Les attaques les plus courantes</h3>
+
+                <p>
+                    Clique sur une carte pour découvrir
+                    une menace et comment s'en protéger.
+                </p>
+
+            </div>
+
+            <div class="security-grid">
+
+                <button type="button"
+                        class="flip-card"
+                        aria-pressed="false">
+
+                    <span class="flip-card-inner">
+
+                        <span class="flip-card-front">
+
+                            <i class="fa-solid fa-envelope-circle-check"></i>
+                            <strong>Phishing</strong>
+                            <span>Retourner la carte</span>
+
+                        </span>
+
+                        <span class="flip-card-back">
+
+                            <strong>Hameçonnage</strong>
+
+                            <span>
+                                Une tentative de tromper
+                                une personne pour obtenir
+                                ses données personnelles.
+                                Vérifie l'expéditeur et
+                                évite les liens suspects.
+                            </span>
+
+                        </span>
+
+                    </span>
+
+                </button>
+
+                <button type="button"
+                        class="flip-card"
+                        aria-pressed="false">
+
+                    <span class="flip-card-inner">
+
+                        <span class="flip-card-front">
+
+                            <i class="fa-solid fa-bug"></i>
+                            <strong>Malware</strong>
+                            <span>Retourner la carte</span>
+
+                        </span>
+
+                        <span class="flip-card-back">
+
+                            <strong>Logiciel malveillant</strong>
+
+                            <span>
+                                Un programme conçu pour
+                                nuire à un appareil ou
+                                voler des informations.
+                                Télécharge depuis des
+                                sources fiables et
+                                maintiens tes logiciels à jour.
+                            </span>
+
+                        </span>
+
+                    </span>
+
+                </button>
+
+                <button type="button"
+                        class="flip-card"
+                        aria-pressed="false">
+
+                    <span class="flip-card-inner">
+
+                        <span class="flip-card-front">
+
+                            <i class="fa-solid fa-key"></i>
+                            <strong>Force brute</strong>
+                            <span>Retourner la carte</span>
+
+                        </span>
+
+                        <span class="flip-card-back">
+
+                            <strong>Attaque par force brute</strong>
+
+                            <span>
+                                Un attaquant essaie
+                                de nombreuses combinaisons
+                                pour deviner un mot de passe.
+                                Utilise des mots de passe
+                                robustes et l'authentification
+                                multifacteur.
+                            </span>
+
+                        </span>
+
+                    </span>
+
+                </button>
+
+            </div>
+
+
+            <!-- CONSEILS DE SECURITE -->
+
+            <div class="security-advice-grid">
+
+                <article class="content-card">
+
+                    <h3>
+                        <i class="fa-solid fa-user-shield"></i>
+                        Pour les utilisateurs
+                    </h3>
+
+                    <ul class="advice-list">
+
+                        <li>Utiliser des mots de passe longs et uniques.</li>
+                        <li>Activer l'authentification multifacteur.</li>
+                        <li>Vérifier les liens avant de cliquer.</li>
+                        <li>Mettre à jour ses appareils.</li>
+                        <li>Effectuer des sauvegardes régulières.</li>
+
+                    </ul>
+
+                </article>
+
+                <article class="content-card">
+
+                    <h3>
+                        <i class="fa-solid fa-laptop-code"></i>
+                        Pour les développeurs
+                    </h3>
+
+                    <ul class="advice-list">
+
+                        <li>Utiliser HTTPS.</li>
+                        <li>Valider les données côté serveur.</li>
+                        <li>Protéger les sessions et les comptes.</li>
+                        <li>Limiter les tentatives de connexion.</li>
+                        <li>Maintenir les dépendances à jour.</li>
+
+                    </ul>
+
+                </article>
+
+            </div>
+
+
+            <!-- QUIZ PHISHING -->
+
+            <div class="quiz-container" id="phishing-quiz">
+
+                <div class="quiz-header">
+
+                    <span class="section-tag">
+                        <i class="fa-solid fa-gamepad"></i>
+                        Défi cybersécurité
+                    </span>
+
+                    <h3>Phishing ou message légitime ?</h3>
+
+                    <p>
+                        Observe le message fictif
+                        et essaie de repérer les indices.
+                    </p>
+
+                </div>
+
+                <div class="quiz-progress">
+
+                    <span id="phishing-question-number">
+                        Question 1
+                    </span>
+
+                    <span id="phishing-score">
+                        Score : 0
+                    </span>
+
+                </div>
+
+                <div class="fake-email">
+
+                    <div class="email-header">
+
+                        <p>
+                            <strong>De :</strong>
+                            <span id="email-sender">
+                                assistance@verification-compte.example
+                            </span>
+                        </p>
+
+                        <p>
+                            <strong>Objet :</strong>
+                            <span id="email-subject">
+                                Votre compte sera suspendu !
+                            </span>
+                        </p>
+
+                    </div>
+
+                    <div class="email-body" id="email-body">
+
+                        <p>Bonjour,</p>
+
+                        <p>
+                            Votre compte sera suspendu
+                            dans deux heures si vous
+                            ne confirmez pas immédiatement
+                            vos informations personnelles.
+                        </p>
+
+                        <p>
+                            Cliquez sur le lien reçu
+                            pour éviter la suspension.
+                        </p>
+
+                    </div>
+
+                </div>
+
+                <div class="quiz-options" id="phishing-options">
+
+                    <button type="button"
+                            class="quiz-option"
+                            data-answer="phishing">
+
+                        <i class="fa-solid fa-triangle-exclamation"></i>
+                        C'est du phishing
+
+                    </button>
+
+                    <button type="button"
+                            class="quiz-option"
+                            data-answer="legitimate">
+
+                        <i class="fa-solid fa-circle-check"></i>
+                        C'est légitime
+
+                    </button>
+
+                </div>
+
+                <div class="quiz-feedback"
+                     id="phishing-feedback"
+                     aria-live="polite"></div>
+
+                <button type="button"
+                        class="btn btn-primary"
+                        id="phishing-next"
+                        hidden>
+
+                    Message suivant
+                    <i class="fa-solid fa-arrow-right"></i>
+
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- ===================================== -->
+        <!-- SECTION 7 : SOURCES ET AUTEURS        -->
+        <!-- ===================================== -->
+
+        <section id="sources" class="section sources-section">
+
+            <div class="section-heading">
+
+                <span class="section-tag">Références</span>
+
+                <h2>Sources et auteurs</h2>
+
+                <p>
+                    Les ressources documentaires
+                    et les informations relatives
+                    à la réalisation du projet.
+                </p>
+
+            </div>
+
+            <div class="content-card">
+
+                <h3>Bibliographie et ressources</h3>
+
+                <div class="table-wrapper">
+
+                    <table class="sources-table">
+
+                        <thead>
+
+                            <tr>
+                                <th>Organisme</th>
+                                <th>Sujet</th>
+                                <th>Lien</th>
+                            </tr>
+
+                        </thead>
+
+                        <tbody>
+
+                            <tr>
+                                <td>MDN Web Docs</td>
+                                <td>URL, HTTP et technologies Web</td>
+                                <td>
+                                    <a href="https://developer.mozilla.org/fr/"
+                                       target="_blank"
+                                       rel="noopener noreferrer">
+                                        Consulter
+                                    </a>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>CERN</td>
+                                <td>Naissance et histoire du Web</td>
+                                <td>
+                                    <a href="https://home.cern/fr/science/computing/birth-web/"
+                                       target="_blank"
+                                       rel="noopener noreferrer">
+                                        Consulter
+                                    </a>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>W3C</td>
+                                <td>Standards du Web</td>
+                                <td>
+                                    <a href="https://www.w3.org/"
+                                       target="_blank"
+                                       rel="noopener noreferrer">
+                                        Consulter
+                                    </a>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>WHATWG</td>
+                                <td>HTML Living Standard</td>
+                                <td>
+                                    <a href="https://html.spec.whatwg.org/"
+                                       target="_blank"
+                                       rel="noopener noreferrer">
+                                        Consulter
+                                    </a>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>IETF</td>
+                                <td>Protocoles Internet</td>
+                                <td>
+                                    <a href="https://www.ietf.org/"
+                                       target="_blank"
+                                       rel="noopener noreferrer">
+                                        Consulter
+                                    </a>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>ICANN</td>
+                                <td>Noms de domaine et DNS</td>
+                                <td>
+                                    <a href="https://www.icann.org/"
+                                       target="_blank"
+                                       rel="noopener noreferrer">
+                                        Consulter
+                                    </a>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>DNS Belgium</td>
+                                <td>Extension .be</td>
+                                <td>
+                                    <a href="https://www.dnsbelgium.be/"
+                                       target="_blank"
+                                       rel="noopener noreferrer">
+                                        Consulter
+                                    </a>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>Safeonweb</td>
+                                <td>Cybersécurité et phishing</td>
+                                <td>
+                                    <a href="https://safeonweb.be/fr"
+                                       target="_blank"
+                                       rel="noopener noreferrer">
+                                        Consulter
+                                    </a>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>OWASP</td>
+                                <td>Sécurité des applications Web</td>
+                                <td>
+                                    <a href="https://owasp.org/"
+                                       target="_blank"
+                                       rel="noopener noreferrer">
+                                        Consulter
+                                    </a>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>OVHcloud — .be</td>
+                                <td>
+                                    Prix du domaine .be
+                                    (09/10/2026)
+                                </td>
+                                <td>
+                                    <a href="https://www.ovhcloud.com/fr/domains/tld/be/"
+                                       target="_blank"
+                                       rel="noopener noreferrer">
+                                        Consulter
+                                    </a>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>OVHcloud — .com</td>
+                                <td>
+                                    Prix du domaine .com
+                                    (09/10/2026)
+                                </td>
+                                <td>
+                                    <a href="https://www.ovhcloud.com/fr/domains/tld/com/"
+                                       target="_blank"
+                                       rel="noopener noreferrer">
+                                        Consulter
+                                    </a>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>OVHcloud — .org</td>
+                                <td>
+                                    Prix du domaine .org
+                                    (09/10/2026)
+                                </td>
+                                <td>
+                                    <a href="https://www.ovhcloud.com/fr/domains/tld/org/"
+                                       target="_blank"
+                                       rel="noopener noreferrer">
+                                        Consulter
+                                    </a>
+                                </td>
+                            </tr>
+
+                            <!-- NOUVELLES SOURCES SUR LE DNS -->
+
+                            <tr>
+                                <td>Cloudflare Learning Center</td>
+                                <td>Fonctionnement du DNS et du cache DNS</td>
+                                <td>
+                                    <a href="https://www.cloudflare.com/learning/dns/what-is-dns/"
+                                       target="_blank"
+                                       rel="noopener noreferrer">
+                                        Consulter
+                                    </a>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>MDN Web Docs</td>
+                                <td>Fonctionnement des noms de domaine</td>
+                                <td>
+                                    <a href="https://developer.mozilla.org/fr/docs/Learn_web_development/Howto/Web_mechanics/What_is_a_domain_name"
+                                       target="_blank"
+                                       rel="noopener noreferrer">
+                                        Consulter
+                                    </a>
+                                </td>
+                            </tr>
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+                <p class="small-note">
+                    Bibliographie à compléter avec
+                    les dates de consultation des différentes
+                    ressources avant la remise du TFE.
+                </p>
+
+            </div>
+
+
+            <!-- AUTEUR DU PROJET -->
+
+            <div class="authors-grid"
+                 style="grid-template-columns: 1fr;">
+
+                <article class="content-card">
+
+                    <h3>
+                        <i class="fa-solid fa-user-graduate"></i>
+                        Auteur du projet
+                    </h3>
+
+                    <p>
+                        <strong>Nom :</strong>
+                        Timothée Bariaux
+                    </p>
+
+                    <p>
+                        <strong>Prénom :</strong>
+                        Raphaël El Sayyed
+                    </p>
+
+                    <p>
+                        <strong>Projet :</strong>
+                        Examen
+                    </p>
+
+                    <p>
+                        <strong>Année :</strong>
+                        2026
+                    </p>
+
+                </article>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- ===================================== -->
+    <!-- PIED DE PAGE                          -->
+    <!-- ===================================== -->
+
+    <footer class="footer">
+
+        <div class="footer-content">
+
+            <div class="footer-brand">
+
+                <a href="#accueil" class="logo">
+
+                    <i class="fa-solid fa-globe"></i>
+
+                    <span>
+                        Web<span class="accent">Explorer</span>
+                    </span>
+
+                </a>
+
+                <p>
+                    Comprendre le Web, une découverte
+                    à la fois.
+                </p>
+
+            </div>
+
+            <div class="footer-links">
+
+                <h4>Navigation</h4>
+
+                <a href="#accueil">Accueil</a>
+                <a href="#timeline">Histoire</a>
+                <a href="#url">URL</a>
+                <a href="#domaines">Domaines</a>
+                <a href="#standards">Standards</a>
+                <a href="#securite">Sécurité</a>
+
+            </div>
+
+            <div class="footer-links">
+
+                <h4>Projet</h4>
+
+                <a href="#sources">Sources</a>
+                <a href="#sources">Auteurs</a>
+
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+
+            <p>
+                © 2026 WebExplorer 
+                
+            </p>
+
+            <p>
+                Réalisé avec HTML, CSS et JavaScript
+            </p>
+
+        </div>
+
+    </footer>
+
+
+    <!-- BOUTON RETOUR EN HAUT -->
+
+    <button type="button"
+            id="back-to-top"
+            class="back-to-top"
+            aria-label="Retour en haut de la page">
+
+        <i class="fa-solid fa-arrow-up"></i>
+
+    </button>
+
+</body>
+</html>
